@@ -37,7 +37,7 @@ namespace PrimaProvaProgetto.Model
             return _dictionary[nome];
         }
 
-        public static List<string> getAlgoritmiDisponibili()
+        public static List<string> GetAlgoritmiDisponibili()
         {
             return _dictionary.Keys.ToList<string>();
         }

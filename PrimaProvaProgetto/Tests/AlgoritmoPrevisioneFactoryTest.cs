@@ -12,7 +12,7 @@ namespace PrimaProvaProgetto.Tests
     {
         public static void Test()
         {
-            List<string> lista = AlgoritmoPrevisioneFactory.getAlgoritmiDisponibili();
+            List<string> lista = AlgoritmoPrevisioneFactory.GetAlgoritmiDisponibili();
             foreach (string a in lista)
                 Console.WriteLine(a);
 
