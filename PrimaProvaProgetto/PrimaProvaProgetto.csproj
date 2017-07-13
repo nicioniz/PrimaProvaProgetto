@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AlgoritmoPrevisioneFactory.cs" />
+    <Compile Include="Model\AlgoritmoPrevisioneSemplice.cs" />
     <Compile Include="Model\Allergene.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
+    <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
@@ -58,6 +61,7 @@
     <Compile Include="Model\TempoPermanenza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AlgoritmoPrevisioneFactoryTest.cs" />
     <Compile Include="Tests\CriteriDiSelezioneTest.cs" />
     <Compile Include="Tests\MoneyTest.cs" />
     <Compile Include="Tests\PietanzaTest.cs" />

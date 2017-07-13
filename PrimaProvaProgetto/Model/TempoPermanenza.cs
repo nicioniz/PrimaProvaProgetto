@@ -65,5 +65,13 @@ namespace PrimaProvaProgetto.Model
                 _oraFine = value;
             }
         }
+
+        public TimeSpan Tempo
+        {
+            get
+            {
+                return OraFine - OraInizio;
+            }
+        }
     }
 }

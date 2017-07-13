@@ -26,7 +26,8 @@ namespace PrimaProvaProgetto
         {
             //MoneyTest.Test();
             //PietanzaTest.Test();
-            CriteriDiSelezioneTest.Test();
+            //CriteriDiSelezioneTest.Test();
+            AlgoritmoPrevisioneFactoryTest.Test();
         }
     }
 }
