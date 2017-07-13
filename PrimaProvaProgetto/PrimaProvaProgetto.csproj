@@ -55,6 +55,7 @@
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
+    <Compile Include="Model\TempoPermanenza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\CriteriDiSelezioneTest.cs" />
