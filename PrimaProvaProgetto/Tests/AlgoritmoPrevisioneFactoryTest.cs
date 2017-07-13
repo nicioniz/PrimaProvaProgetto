@@ -16,42 +16,20 @@ namespace PrimaProvaProgetto.Tests
             foreach (string a in lista)
                 Console.WriteLine(a);
 
-            //Dictionary<string, IAlgoritmoPrevisione> _dictionary = new Dictionary<string, IAlgoritmoPrevisione>();
-            //Assembly.GetExecutingAssembly().GetTypes()
-            //    .Where(type => (type.GetInterface("IAlgoritmoPrevisione") != null))
-            //    .ToList()
-            //    .ForEach(type => _dictionary.Add(type.Name, (IAlgoritmoPrevisione)type.GetConstructor(Type.EmptyTypes).Invoke(Type.EmptyTypes)));
-            //_dictionary.Keys.ToList().ForEach(s => Console.WriteLine(s));
+            IAlgoritmoPrevisione alg = AlgoritmoPrevisioneFactory.GetAlgoritmoPrevisione("AlgoritmoPrevisioneSemplice");
 
-            //Assembly.GetExecutingAssembly().GetTypes()
-            //    .Where(type => (type.GetInterface("IAlgoritmoPrevisione") != null))
-            //    .ToList()
-            //    .ForEach(type => Console.WriteLine(type.Name));
+            List<TempoPermanenza> tps = new List<TempoPermanenza>();
+
+            DateTime adesso = DateTime.Now;
+
+            tps.Add(new TempoPermanenza(2, adesso, adesso + new TimeSpan(0, 30, 0)));
+            tps.Add(new TempoPermanenza(2, adesso, adesso + new TimeSpan(0, 45, 0)));
+            tps.Add(new TempoPermanenza(2, adesso, adesso + new TimeSpan(1, 0, 0)));
+
+            TimeSpan ts = alg.OttieniPrevisione(tps, 2);
+
+            Console.WriteLine(ts.TotalMinutes);
         }
     }
-
-    //class prova1 : IAlgoritmoPrevisione
-    //{
-    //    public prova1() { }
-    //    public TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone)
-    //    {
-    //        return new TimeSpan();
-    //    }
-    //}
-    //class prova2 : IAlgoritmoPrevisione
-    //{
-    //    public prova2() { }
-    //    public TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone)
-    //    {
-    //        return new TimeSpan();
-    //    }
-    //}
-    //class prova3 : IAlgoritmoPrevisione
-    //{
-    //    public prova3() { }
-    //    public TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone)
-    //    {
-    //        return new TimeSpan();
-    //    }
-    //}
+    
 }

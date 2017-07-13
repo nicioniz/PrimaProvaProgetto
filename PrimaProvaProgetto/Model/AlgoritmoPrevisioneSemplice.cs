@@ -9,8 +9,8 @@ namespace PrimaProvaProgetto.Model
     class AlgoritmoPrevisioneSemplice : IAlgoritmoPrevisione
     {
         /*
-         * Faccio semplicemente la media delle varie permanenze 
-         */
+        * Faccio semplicemente la media delle varie permanenze 
+        */
         public TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone)
         {
             return new TimeSpan(Convert.ToInt64(
