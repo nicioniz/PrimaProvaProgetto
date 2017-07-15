@@ -61,6 +61,12 @@
     <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Presentation\CategoriaModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\CategoriaModifier.Designer.cs">
+      <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\FirstWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,15 @@
     <Compile Include="Tests\CriteriDiSelezioneTest.cs" />
     <Compile Include="Tests\MoneyTest.cs" />
     <Compile Include="Tests\PietanzaTest.cs" />
+    <Compile Include="Tests\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
+      <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +118,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tests\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

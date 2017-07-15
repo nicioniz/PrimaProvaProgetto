@@ -14,10 +14,15 @@ namespace PrimaProvaProgetto.Presentation
     public partial class PietanzaControl : UserControl
     {
         private Pietanza _pietanza;
-        public PietanzaControl(Pietanza p)
+        public PietanzaControl()
         {
             InitializeComponent();
-            _pietanza = p;
+            Dock = DockStyle.Fill;
+            
+        }
+
+        private void _pietanza_Changed(object sender, EventArgs e)
+        {
             Draw();
         }
 
@@ -29,15 +34,32 @@ namespace PrimaProvaProgetto.Presentation
             }
         }
 
+        public Pietanza Pietanza
+        {
+            get
+            {
+                return _pietanza;
+            }
+
+            set
+            {
+                _pietanza = value;
+                _pietanza.Changed += _pietanza_Changed;
+                Draw();
+            }
+        }
+
         private void Draw()
         {
-            _nomeLabel.Text = _pietanza.Titolo;
-            _disponibileCheckBox.Checked = _pietanza.Disponibile;
+            _nomeLabel.Text = Pietanza.Titolo;
+            _disponibileCheckBox.Checked = Pietanza.Disponibile;
         }
 
         private void _disponibileCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            _pietanza.Disponibile = _disponibileCheckBox.Checked;
+            Pietanza.Disponibile = _disponibileCheckBox.Checked;
         }
+
+        
     }
 }

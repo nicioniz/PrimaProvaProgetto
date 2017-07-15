@@ -16,6 +16,8 @@ namespace PrimaProvaProgetto.Model
         private Categoria _categoria;
         private List<Allergene> _allergeni;
 
+        public event EventHandler Changed;
+
         public Pietanza(string titolo, Money prezzo, Categoria categoria, List<Allergene> allergeni, string descrizione = "", bool disponibile = true)
         {
             if (titolo == null)
@@ -28,6 +30,11 @@ namespace PrimaProvaProgetto.Model
             Allergeni = allergeni;
         }
         
+        private void OnChanged()
+        {
+            Changed?.Invoke(this, EventArgs.Empty);
+        }
+
         public string Titolo
         {
             get
@@ -38,6 +45,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _titolo = value;
+                OnChanged();
             }
         }
 
@@ -51,6 +59,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _descrizione = value ?? string.Empty;
+                OnChanged();
             }
         }
 
@@ -64,6 +73,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _prezzo = value;
+                OnChanged();
             }
         }
 
@@ -77,6 +87,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _disponibile = value;
+                OnChanged();
             }
         }
 
@@ -90,6 +101,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _categoria = value;
+                OnChanged();
             }
         }
 
@@ -103,6 +115,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _allergeni = value ?? new List<Allergene>();
+                OnChanged();
             }
         }
 

@@ -18,7 +18,7 @@ namespace PrimaProvaProgetto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FirstWindowForm());
+            Application.Run(new Test());
 
             //Tests();
         }
