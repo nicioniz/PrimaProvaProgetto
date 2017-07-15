@@ -25,7 +25,7 @@ namespace PrimaProvaProgetto.Model
      *     "Categoria.Primo | Categoria.Secondo"
      */
 
-    class CriterioDiSelezioneAll : ICriterioDiSelezione
+    public class CriterioDiSelezioneAll : ICriterioDiSelezione
     {
         public List<Pietanza> GetPietanze()
         {
@@ -33,7 +33,7 @@ namespace PrimaProvaProgetto.Model
         }
     }
 
-    class CriterioDiSelezioneBase : ICriterioDiSelezione
+    public class CriterioDiSelezioneBase : ICriterioDiSelezione
     {
         private Func<Pietanza, bool> _predicate;
         private ICriterioDiSelezione _innerCriterio;
@@ -55,7 +55,7 @@ namespace PrimaProvaProgetto.Model
         }
     }
 
-    class CriterioDiSelezioneByCategoria : CriterioDiSelezioneBase
+    public class CriterioDiSelezioneByCategoria : CriterioDiSelezioneBase
     {
         public CriterioDiSelezioneByCategoria(Categoria categoria)
             : base(p => categoria.HasFlag(p.Categoria)) { }
@@ -64,7 +64,7 @@ namespace PrimaProvaProgetto.Model
             : base(p => categoria.HasFlag(p.Categoria), innerCriterio) { }
     }
 
-    class CriterioDiSelezioneByNotContainsAllergene : CriterioDiSelezioneBase
+    public class CriterioDiSelezioneByNotContainsAllergene : CriterioDiSelezioneBase
     {
         public CriterioDiSelezioneByNotContainsAllergene(Allergene allergene)
             : base(p => !p.Allergeni.Contains(allergene)) { }
@@ -73,7 +73,7 @@ namespace PrimaProvaProgetto.Model
             : base(p => !p.Allergeni.Contains(allergene), innerCriterio) { }
     }
 
-    class CriterioDiSelezioneByDisp : CriterioDiSelezioneBase
+    public class CriterioDiSelezioneByDisp : CriterioDiSelezioneBase
     {
         public CriterioDiSelezioneByDisp()
             : base(p => p.Disponibile) { }

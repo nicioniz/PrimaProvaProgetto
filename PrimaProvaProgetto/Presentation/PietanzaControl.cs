@@ -18,6 +18,7 @@ namespace PrimaProvaProgetto.Presentation
         {
             InitializeComponent();
             _pietanza = p;
+            Draw();
         }
 
         public bool Disponibile
@@ -26,6 +27,17 @@ namespace PrimaProvaProgetto.Presentation
             {
                 return _disponibileCheckBox.Checked;
             }
+        }
+
+        private void Draw()
+        {
+            _nomeLabel.Text = _pietanza.Titolo;
+            _disponibileCheckBox.Checked = _pietanza.Disponibile;
+        }
+
+        private void _disponibileCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            _pietanza.Disponibile = _disponibileCheckBox.Checked;
         }
     }
 }

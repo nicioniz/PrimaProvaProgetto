@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class Ristorante
+    public class Ristorante
     {
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;

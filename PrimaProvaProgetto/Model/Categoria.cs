@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PrimaProvaProgetto.Model
 {
     [Flags]
-    enum Categoria
+    public enum Categoria
     {
         Antipasto = 1,
         Primo = 2,

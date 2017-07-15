@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class Previsione
+    public class Previsione
     {
         private static Previsione _instance;
 

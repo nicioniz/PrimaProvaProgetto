@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class AlgoritmoPrevisioneFactory
+    public class AlgoritmoPrevisioneFactory
     {
         private static readonly Dictionary<string, IAlgoritmoPrevisione> _dictionary;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class TempoPermanenza
+    public class TempoPermanenza
     {
         private int _numeroCoperti;
         private DateTime _oraInizio;

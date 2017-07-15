@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    interface IAlgoritmoPrevisione
+    public interface IAlgoritmoPrevisione
     {
         TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone);
     }

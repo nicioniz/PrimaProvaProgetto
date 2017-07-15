@@ -53,6 +53,7 @@
             this._disponibileCheckBox.Size = new System.Drawing.Size(22, 21);
             this._disponibileCheckBox.TabIndex = 1;
             this._disponibileCheckBox.UseVisualStyleBackColor = true;
+            this._disponibileCheckBox.CheckedChanged += new System.EventHandler(this._disponibileCheckBox_CheckedChanged);
             // 
             // contextMenuStrip1
             // 
@@ -60,12 +61,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._modificaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 67);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 34);
             // 
             // _modificaToolStripMenuItem
             // 
             this._modificaToolStripMenuItem.Name = "_modificaToolStripMenuItem";
-            this._modificaToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this._modificaToolStripMenuItem.Size = new System.Drawing.Size(153, 30);
             this._modificaToolStripMenuItem.Text = "&Modifica";
             // 
             // PietanzaControl

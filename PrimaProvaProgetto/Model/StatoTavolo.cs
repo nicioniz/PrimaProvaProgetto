@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    enum StatoTavolo
+    public enum StatoTavolo
     {
         Libero = 0,
         Occupato = 1

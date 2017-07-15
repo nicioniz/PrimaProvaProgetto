@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class Allergene
+    public class Allergene
     {
         private string _nome;
 
