@@ -58,6 +58,7 @@
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
     <Compile Include="Model\ILayoutPersister.cs" />
+    <Compile Include="Model\IMenuPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Persistance\MenuPersisterFactory.cs" />
     <Compile Include="Persistance\SimpleJsonLayoutPersister.cs" />
     <Compile Include="Persistance\LayoutPersisterFactory.cs" />
     <Compile Include="Program.cs" />
