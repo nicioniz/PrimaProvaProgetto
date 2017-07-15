@@ -1,4 +1,5 @@
-﻿using PrimaProvaProgetto.Tests;
+﻿using PrimaProvaProgetto.Presentation;
+using PrimaProvaProgetto.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace PrimaProvaProgetto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new FirstWindowForm());
 
-            Tests();
+            //Tests();
         }
 
         static void Tests()
