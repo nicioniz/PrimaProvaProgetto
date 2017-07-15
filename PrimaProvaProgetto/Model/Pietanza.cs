@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class Pietanza
+    public class Pietanza
     {
         private string _titolo;
         private string _descrizione;
@@ -93,7 +93,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
-        internal List<Allergene> Allergeni
+        public List<Allergene> Allergeni
         {
             get
             {
