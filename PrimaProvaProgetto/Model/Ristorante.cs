@@ -13,6 +13,7 @@ namespace PrimaProvaProgetto.Model
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;
         private List<Allergene> _allergeni;
+        private List<Tavolo> _tavoli;
 
         private static Ristorante _instance = null;
 
@@ -55,6 +56,19 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        internal List<Tavolo> Tavoli
+        {
+            get
+            {
+                return _tavoli;
+            }
+
+            set
+            {
+                _tavoli = value;
+            }
+        }
+
         public event NotifyCollectionChangedEventHandler ListaPrenotazioniChanged;
 
         private Ristorante()
@@ -62,6 +76,7 @@ namespace PrimaProvaProgetto.Model
             Menu = new List<Pietanza>();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
             Allergeni = new List<Allergene>();
+            Tavoli = new List<Tavolo>();
             //possiamo mettere il caricamento da file
             ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
         }        

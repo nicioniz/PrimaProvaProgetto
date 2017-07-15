@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,13 +57,17 @@
     <Compile Include="Model\CriteriDiSelezione.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
+    <Compile Include="Model\ILayoutPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\Previsione.cs" />
     <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
+    <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Persistance\SimpleJsonLayoutPersister.cs" />
+    <Compile Include="Persistance\LayoutPersisterFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AlgoritmoPrevisioneFactoryTest.cs" />
@@ -75,6 +83,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +97,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
