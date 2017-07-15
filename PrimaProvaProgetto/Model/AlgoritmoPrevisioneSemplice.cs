@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class AlgoritmoPrevisioneSemplice : IAlgoritmoPrevisione
+    public class AlgoritmoPrevisioneSemplice : IAlgoritmoPrevisione
     {
         /*
         * Faccio semplicemente la media delle varie permanenze 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    interface ICriterioDiSelezione
+    public interface ICriterioDiSelezione
     {
         List<Pietanza> GetPietanze();
     }

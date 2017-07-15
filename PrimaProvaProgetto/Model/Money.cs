@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    struct Money
+    public struct Money
     {
         private decimal _value;
 

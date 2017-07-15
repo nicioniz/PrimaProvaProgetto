@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaProvaProgetto.Model
 {
-    class Prenotazione
+    public class Prenotazione
     {
         private string _nome;
         private string _numeroTelefono;
