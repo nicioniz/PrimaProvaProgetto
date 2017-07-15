@@ -61,8 +61,9 @@ namespace PrimaProvaProgetto.Model
         {
             Menu = new List<Pietanza>();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
-            Allergeni = new List<Allergene>();
+            Allergeni = LoadAllergeni();
             //possiamo mettere il caricamento da file
+            
             ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
         }        
 
@@ -71,6 +72,30 @@ namespace PrimaProvaProgetto.Model
             if (_instance == null)
                 _instance = new Ristorante();
             return _instance;
+        }
+
+        private List<Allergene> LoadAllergeni()
+        {
+            List<Allergene> res = new List<Allergene>();
+            /*
+             * fonte:
+             * http://gruppomaurizi.it/allergeni-ristoranti/
+             */
+            res.Add(new Allergene("Glutine"));
+            res.Add(new Allergene("Uova"));
+            res.Add(new Allergene("Crostacei"));
+            res.Add(new Allergene("Pesce"));
+            res.Add(new Allergene("Arachidi"));
+            res.Add(new Allergene("Frutta a guscio"));
+            res.Add(new Allergene("Soia"));
+            res.Add(new Allergene("Sedano"));
+            res.Add(new Allergene("Lattosio"));
+            res.Add(new Allergene("Senape"));
+            res.Add(new Allergene("Sesamo"));
+            res.Add(new Allergene("Lupini"));
+            res.Add(new Allergene("Molluschi"));
+
+            return res;
         }
 
     }

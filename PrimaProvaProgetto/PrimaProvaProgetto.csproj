@@ -49,6 +49,7 @@
     <Compile Include="Model\AlgoritmoPrevisioneFactory.cs" />
     <Compile Include="Model\AlgoritmoPrevisioneSemplice.cs" />
     <Compile Include="Model\Allergene.cs" />
+    <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
