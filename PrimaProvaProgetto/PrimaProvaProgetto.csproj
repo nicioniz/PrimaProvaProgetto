@@ -61,6 +61,12 @@
     <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Presentation\AllergeniModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\AllergeniModifier.Designer.cs">
+      <DependentUpon>AllergeniModifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\CategoriaModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="Tests\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Presentation\AllergeniModifier.resx">
+      <DependentUpon>AllergeniModifier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>
     </EmbeddedResource>
