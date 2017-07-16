@@ -52,6 +52,7 @@
     <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
+    <Compile Include="Model\EditabileAttrinute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
     <Compile Include="Model\Money.cs" />

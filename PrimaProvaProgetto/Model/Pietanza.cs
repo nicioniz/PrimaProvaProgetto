@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -35,6 +36,7 @@ namespace PrimaProvaProgetto.Model
             Changed?.Invoke(this, EventArgs.Empty);
         }
 
+        [Editabile]
         public string Titolo
         {
             get
@@ -49,6 +51,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile]
         public string Descrizione
         {
             get
@@ -63,6 +66,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile(Modifier = typeof(MoneyModifier))]
         public Money Prezzo
         {
             get
@@ -91,6 +95,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile(Modifier = typeof(CategoriaModifier))]
         public Categoria Categoria
         {
             get
@@ -105,6 +110,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile(Modifier = typeof(AllergeniModifier))]
         public List<Allergene> Allergeni
         {
             get
