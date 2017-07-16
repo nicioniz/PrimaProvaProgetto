@@ -17,11 +17,11 @@ namespace PrimaProvaProgetto.Tests
         public Test()
         {
             InitializeComponent();
-            //CategoriaModifier cm = new CategoriaModifier();
-            //cm.Checked = Model.Categoria.Contorno;
-            //Controls.Add(cm);
+            CategoriaModifier cm = new CategoriaModifier();
+            cm.Checked = Categoria.Contorno;
+            Controls.Add(cm);
 
-            //Model.Categoria a = cm.Checked;
+            Categoria a = cm.Checked;
 
             AllergeniModifier am = new AllergeniModifier();
             List<Allergene> all = new List<Allergene>();

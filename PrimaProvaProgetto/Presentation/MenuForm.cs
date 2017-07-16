@@ -16,22 +16,22 @@ namespace PrimaProvaProgetto.Presentation
         public MenuForm()
         {
             InitializeComponent();
-            
-            
-            PietanzaControl pc;
-            bool dis = true;
-            for(int i = 0; i < 10; i++)
+        }
+
+        public TableLayoutPanel TableLayoutPanel
+        {
+            get
             {
-                pc = new PietanzaControl();
-                pc.Pietanza = new Pietanza("nomepietanza" + i, 10.0m, Categoria.Primo, new List<Allergene>(), disponibile: dis);
-                dis = !dis;
-                tableLayoutPanel1.Controls.Add(pc);
-                tableLayoutPanel1.RowCount = tableLayoutPanel1.RowCount + 1;
-
-                tableLayoutPanel1.Update();
+                return tableLayoutPanel1;
             }
-            
+        }
 
+        public Button Indietro
+        {
+            get
+            {
+                return _indietroButton;
+            }
         }
     }
 }

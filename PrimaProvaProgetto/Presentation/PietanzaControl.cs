@@ -60,6 +60,13 @@ namespace PrimaProvaProgetto.Presentation
             Pietanza.Disponibile = _disponibileCheckBox.Checked;
         }
 
+        public ToolStripMenuItem Modifica
+        {
+            get
+            {
+                return _modificaToolStripMenuItem;
+            }
+        }
         
     }
 }
