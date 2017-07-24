@@ -60,7 +60,9 @@
     <Compile Include="Model\Previsione.cs" />
     <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
+    <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Presenter\CalcolaTempo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AlgoritmoPrevisioneFactoryTest.cs" />
@@ -89,6 +91,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

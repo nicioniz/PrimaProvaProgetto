@@ -15,11 +15,12 @@ namespace PrimaProvaProgetto
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
             Tests();
+           
         }
 
         static void Tests()
@@ -28,6 +29,7 @@ namespace PrimaProvaProgetto
             //PietanzaTest.Test();
             //CriteriDiSelezioneTest.Test();
             AlgoritmoPrevisioneFactoryTest.Test();
+           
         }
     }
 }

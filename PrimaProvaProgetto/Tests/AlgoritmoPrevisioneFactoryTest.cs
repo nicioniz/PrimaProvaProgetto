@@ -29,6 +29,7 @@ namespace PrimaProvaProgetto.Tests
             TimeSpan ts = alg.OttieniPrevisione(tps, 2);
 
             Console.WriteLine(ts.TotalMinutes);
+            Console.ReadLine();
         }
     }
     

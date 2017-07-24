@@ -13,6 +13,7 @@ namespace PrimaProvaProgetto.Model
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;
         private List<Allergene> _allergeni;
+        private List<Tavolo> _tavoli;
 
         private static Ristorante _instance = null;
 
@@ -26,6 +27,19 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _menu = value;
+            }
+        }
+
+        public List<Tavolo> Tavoli
+        {
+            get
+            {
+                return _tavoli;
+            }
+
+            set
+            {
+                _tavoli = value;
             }
         }
 
