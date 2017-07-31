@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.moneyModifier1 = new PrimaProvaProgetto.Presentation.MoneyModifier();
             this.SuspendLayout();
+            // 
+            // moneyModifier1
+            // 
+            this.moneyModifier1.AutoSize = true;
+            this.moneyModifier1.Location = new System.Drawing.Point(212, 147);
+            this.moneyModifier1.Name = "moneyModifier1";
+            this.moneyModifier1.Size = new System.Drawing.Size(123, 28);
+            this.moneyModifier1.TabIndex = 0;
             // 
             // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 471);
+            this.Controls.Add(this.moneyModifier1);
             this.Name = "Test";
             this.Text = "Test";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private Presentation.MoneyModifier moneyModifier1;
     }
 }

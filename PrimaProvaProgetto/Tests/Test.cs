@@ -17,20 +17,22 @@ namespace PrimaProvaProgetto.Tests
         public Test()
         {
             InitializeComponent();
-            CategoriaModifier cm = new CategoriaModifier();
-            cm.Checked = Categoria.Contorno;
-            Controls.Add(cm);
+            //CategoriaModifier cm = new CategoriaModifier();
+            //cm.Checked = Categoria.Contorno;
+            //Controls.Add(cm);
 
-            Categoria a = cm.Checked;
+            //Categoria a = cm.Checked;
 
-            AllergeniModifier am = new AllergeniModifier();
-            List<Allergene> all = new List<Allergene>();
-            all.Add(Ristorante.GetInstance().Allergeni.GetAllergene("Lattosio"));
-            all.Add(Ristorante.GetInstance().Allergeni.GetAllergene("Senape"));
-            am.Allergeni = all;
-            Controls.Add(am);
+            //AllergeniModifier am = new AllergeniModifier();
+            //List<Allergene> all = new List<Allergene>();
+            //all.Add(Ristorante.GetInstance().Allergeni.GetAllergene("Lattosio"));
+            //all.Add(Ristorante.GetInstance().Allergeni.GetAllergene("Senape"));
+            //am.Allergeni = all;
+            //Controls.Add(am);
 
-            List<Allergene> la = am.Allergeni;
+            //List<Allergene> la = am.Allergeni;
+
+          
         }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this._indietroButton = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._indietroButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,17 +63,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(558, 543);
             this.splitContainer1.SplitterDistance = 472;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // _indietroButton
-            // 
-            this._indietroButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._indietroButton.Location = new System.Drawing.Point(427, 12);
-            this._indietroButton.Name = "_indietroButton";
-            this._indietroButton.Size = new System.Drawing.Size(119, 43);
-            this._indietroButton.TabIndex = 0;
-            this._indietroButton.Text = "Indietro";
-            this._indietroButton.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
@@ -129,6 +118,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 420F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(558, 420);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // _indietroButton
+            // 
+            this._indietroButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._indietroButton.Location = new System.Drawing.Point(427, 12);
+            this._indietroButton.Name = "_indietroButton";
+            this._indietroButton.Size = new System.Drawing.Size(119, 43);
+            this._indietroButton.TabIndex = 0;
+            this._indietroButton.Text = "Indietro";
+            this._indietroButton.UseVisualStyleBackColor = true;
             // 
             // MenuForm
             // 
