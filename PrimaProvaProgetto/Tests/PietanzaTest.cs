@@ -19,7 +19,7 @@ namespace PrimaProvaProgetto.Tests
 
             foreach (Pietanza pietanza in p)
                 Console.WriteLine(pietanza + Environment.NewLine);
-
+            Console.WriteLine("--------------------------------");
         }
     }
 }

@@ -17,13 +17,13 @@ namespace PrimaProvaProgetto.Model
         public int Coperti
         {
             get { return _coperti; }
-            set { _coperti = value;}
+            set { if (value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value;}
         }
 
         public int PostiMax
         {
             get { return _postiMax; }
-            set { _postiMax = value; }
+            set { if (value <= 0) throw new ArgumentException("Invalid max seats number"); _postiMax = value; }
         }
 
         public CalcolaTempo CalcolaTempo
@@ -41,9 +41,6 @@ namespace PrimaProvaProgetto.Model
 
         public Tavolo(int coperti, int postimax, StatoTavolo stato)
         {  
-            if (coperti <= 0) throw new ArgumentException("Invalid seats number");
-            if (postimax <= 0) throw new ArgumentException("Invalid max seats number");
-
             Coperti = coperti;
             PostiMax = postimax;
             Stato = stato;

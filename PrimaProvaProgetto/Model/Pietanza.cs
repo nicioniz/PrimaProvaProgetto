@@ -18,8 +18,6 @@ namespace PrimaProvaProgetto.Model
 
         public Pietanza(string titolo, Money prezzo, Categoria categoria, List<Allergene> allergeni, string descrizione = "", bool disponibile = true)
         {
-            if (titolo == null)
-                throw new ArgumentNullException("titolo");
             Titolo = titolo;
             Descrizione = descrizione;
             Prezzo = prezzo;
@@ -37,6 +35,8 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (value == null)
+                    throw new ArgumentNullException("titolo");
                 _titolo = value;
             }
         }

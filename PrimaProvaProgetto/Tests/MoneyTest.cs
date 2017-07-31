@@ -22,7 +22,7 @@ namespace PrimaProvaProgetto.Tests
             Console.WriteLine("m1 == 1.3 --> " + (m1 == 1.3m));
             Console.WriteLine("m2 == 3.5 --> " + (m2 == 3.5m));
             Console.WriteLine("m1 == 10 --> " + (m1 == 10m));
-
+            Console.WriteLine("--------------------------------");
         } 
 
     }

@@ -10,6 +10,11 @@ namespace PrimaProvaProgetto.Model
     {
         private string _nome;
 
+        public Allergene(String nome)
+        {
+            Nome = nome;
+        }
+
         public string Nome
         {
             get
@@ -22,12 +27,7 @@ namespace PrimaProvaProgetto.Model
                 _nome = value ?? string.Empty;
             }
         }
-
-        public Allergene(String nome)
-        {
-            Nome = nome;
-        }
-
+        
         public Allergene() : this(null) { }
 
         public override string ToString()

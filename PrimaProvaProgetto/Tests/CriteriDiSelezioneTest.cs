@@ -47,7 +47,7 @@ namespace PrimaProvaProgetto.Tests
                     new CriterioDiSelezioneByNotContainsAllergene(new Allergene("Latticini")))
                 .GetPietanze()
                 .ForEach(p => Console.WriteLine(p + Environment.NewLine));
-
+            Console.WriteLine("--------------------------------");
         }
 
     }

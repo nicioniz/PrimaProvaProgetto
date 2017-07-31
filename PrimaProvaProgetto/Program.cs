@@ -25,11 +25,11 @@ namespace PrimaProvaProgetto
 
         static void Tests()
         {
-            //MoneyTest.Test();
-            //PietanzaTest.Test();
-            //CriteriDiSelezioneTest.Test();
+            MoneyTest.Test();
+            PietanzaTest.Test();
+            CriteriDiSelezioneTest.Test();
             AlgoritmoPrevisioneFactoryTest.Test();
-           
+            Console.ReadLine();
         }
     }
 }
