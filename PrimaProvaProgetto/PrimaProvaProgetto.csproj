@@ -92,11 +92,11 @@
     <Compile Include="Presentation\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.cs">
+    <Compile Include="Presentation\MoneyModifier_bis.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.Designer.cs">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <Compile Include="Presentation\MoneyModifier_bis.Designer.cs">
+      <DependentUpon>MoneyModifier_bis.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PietanzaControl.cs">
       <SubType>UserControl</SubType>
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="Presentation\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\MoneyModifier.resx">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\MoneyModifier_bis.resx">
+      <DependentUpon>MoneyModifier_bis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PietanzaControl.resx">
       <DependentUpon>PietanzaControl.cs</DependentUpon>
