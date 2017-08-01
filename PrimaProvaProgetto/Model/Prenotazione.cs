@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PrimaProvaProgetto.Model
 {
@@ -25,6 +26,7 @@ namespace PrimaProvaProgetto.Model
             NumeroCoperti = numeroCoperti;
         }
 
+        [Editabile]
         public string Nome
         {
             get
@@ -38,6 +40,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile]
         public string NumeroTelefono
         {
             get
@@ -51,6 +54,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
+        [Editabile(Modifier = typeof(NumericUpDown))]
         public int NumeroCoperti
         {
             get

@@ -52,6 +52,7 @@
     <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
+    <Compile Include="Model\EditabileAttrinute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
     <Compile Include="Model\Money.cs" />
@@ -62,13 +63,72 @@
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
-    <Compile Include="Presenter\CalcolaTempo.cs" />
+    <Compile Include="Presentation\AllergeniModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\AllergeniModifier.Designer.cs">
+      <DependentUpon>AllergeniModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\CategoriaModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\CategoriaModifier.Designer.cs">
+      <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FirstWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FirstWindowForm.Designer.cs">
+      <DependentUpon>FirstWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MoneyModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\MoneyModifier.Designer.cs">
+      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\PietanzaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\PietanzaControl.Designer.cs">
+      <DependentUpon>PietanzaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AlgoritmoPrevisioneFactoryTest.cs" />
     <Compile Include="Tests\CriteriDiSelezioneTest.cs" />
     <Compile Include="Tests\MoneyTest.cs" />
     <Compile Include="Tests\PietanzaTest.cs" />
+    <Compile Include="Tests\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Presentation\AllergeniModifier.resx">
+      <DependentUpon>AllergeniModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
+      <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
+      <DependentUpon>FirstWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\MoneyModifier.resx">
+      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\PietanzaControl.resx">
+      <DependentUpon>PietanzaControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -78,6 +138,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tests\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
