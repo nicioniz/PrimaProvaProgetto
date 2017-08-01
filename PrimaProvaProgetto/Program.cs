@@ -1,4 +1,5 @@
-﻿using PrimaProvaProgetto.Tests;
+﻿using PrimaProvaProgetto.Presentation;
+using PrimaProvaProgetto.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,13 @@ namespace PrimaProvaProgetto
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Test());
+            //(new FirstWindowForm()).Show();
 
-            Tests();
-           
+            //Tests();
+
         }
 
         static void Tests()

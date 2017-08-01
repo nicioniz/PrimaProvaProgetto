@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace PrimaProvaProgetto.Model
         private Categoria _categoria;
         private List<Allergene> _allergeni;
 
+        public event EventHandler Changed;
+
         public Pietanza(string titolo, Money prezzo, Categoria categoria, List<Allergene> allergeni, string descrizione = "", bool disponibile = true)
         {
             Titolo = titolo;
@@ -26,6 +29,12 @@ namespace PrimaProvaProgetto.Model
             Allergeni = allergeni;
         }
         
+        private void OnChanged()
+        {
+            Changed?.Invoke(this, EventArgs.Empty);
+        }
+
+        [Editabile]
         public string Titolo
         {
             get
@@ -38,9 +47,11 @@ namespace PrimaProvaProgetto.Model
                 if (value == null)
                     throw new ArgumentNullException("titolo");
                 _titolo = value;
+                OnChanged();
             }
         }
 
+        [Editabile]
         public string Descrizione
         {
             get
@@ -51,9 +62,11 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _descrizione = value ?? string.Empty;
+                OnChanged();
             }
         }
 
+        [Editabile(Modifier = typeof(MoneyModifier))]
         public Money Prezzo
         {
             get
@@ -64,6 +77,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _prezzo = value;
+                OnChanged();
             }
         }
 
@@ -77,9 +91,11 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _disponibile = value;
+                OnChanged();
             }
         }
 
+        [Editabile(Modifier = typeof(CategoriaModifier))]
         public Categoria Categoria
         {
             get
@@ -90,10 +106,12 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _categoria = value;
+                OnChanged();
             }
         }
 
-        internal List<Allergene> Allergeni
+        [Editabile(Modifier = typeof(AllergeniModifier))]
+        public List<Allergene> Allergeni
         {
             get
             {
@@ -103,6 +121,7 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _allergeni = value ?? new List<Allergene>();
+                OnChanged();
             }
         }
 
