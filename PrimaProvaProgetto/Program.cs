@@ -18,20 +18,18 @@ namespace PrimaProvaProgetto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Test());
-            //(new FirstWindowForm()).Show();
+            Application.Run(new LayoutForm());
+            (new Test()).Show();
 
             //Tests();
-
         }
 
         static void Tests()
         {
-            MoneyTest.Test();
-            PietanzaTest.Test();
-            CriteriDiSelezioneTest.Test();
+            //MoneyTest.Test();
+            //PietanzaTest.Test();
+            //CriteriDiSelezioneTest.Test();
             AlgoritmoPrevisioneFactoryTest.Test();
-            Console.ReadLine();
         }
     }
 }
