@@ -80,23 +80,17 @@
     <Compile Include="Presentation\FirstWindowForm.Designer.cs">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\LayoutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\LayoutForm.designer.cs">
-      <DependentUpon>LayoutForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier_bis.cs">
+    <Compile Include="Presentation\MoneyModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier_bis.Designer.cs">
-      <DependentUpon>MoneyModifier_bis.cs</DependentUpon>
+    <Compile Include="Presentation\MoneyModifier.Designer.cs">
+      <DependentUpon>MoneyModifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PietanzaControl.cs">
       <SubType>UserControl</SubType>
@@ -125,14 +119,11 @@
     <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\LayoutForm.resx">
-      <DependentUpon>LayoutForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\MoneyModifier_bis.resx">
-      <DependentUpon>MoneyModifier_bis.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\MoneyModifier.resx">
+      <DependentUpon>MoneyModifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PietanzaControl.resx">
       <DependentUpon>PietanzaControl.cs</DependentUpon>
@@ -161,15 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\2 posti oriz.png" />
-    <Content Include="Resources\4 posti.jpg" />
-    <Content Include="Resources\4 posti.png" />
-    <Content Include="Resources\6 posti.png" />
-    <Content Include="Resources\8 posti.png" />
-    <Content Include="Resources\parkiet_dab_gestreift.jpg" />
-    <Content Include="Resources\Wood Floor install.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
