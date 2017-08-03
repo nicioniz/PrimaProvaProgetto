@@ -97,6 +97,7 @@
     <Compile Include="Presentation\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\MenuFormPresenter.cs" />
     <Compile Include="Presentation\ModifierForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -85,9 +85,11 @@ namespace PrimaProvaProgetto.Tests
             {
                 PietanzaControl pc = new PietanzaControl();
                 pc.Pietanza = p;
-                mf.TableLayoutPanel.Controls.Add(pc, 0, mf.TableLayoutPanel.RowCount++ - 1);
+                mf.TableLayoutPanel.Controls.Add(pc, 0, mf.TableLayoutPanel.RowCount++ - 2);
+                //mf.TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 pc.Modifica.Click += buttonModifica_Click;
             }
+            
         }
 
         private void buttonModifica_Click(object sender, EventArgs e)

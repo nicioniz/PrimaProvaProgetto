@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._indietroButton = new System.Windows.Forms.Button();
+            this._newPietanzaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this._newPietanzaButton);
             this.splitContainer1.Panel2.Controls.Add(this._indietroButton);
             this.splitContainer1.Size = new System.Drawing.Size(558, 543);
             this.splitContainer1.SplitterDistance = 472;
@@ -108,14 +110,15 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 420F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(558, 420);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -129,6 +132,17 @@
             this._indietroButton.TabIndex = 0;
             this._indietroButton.Text = "Indietro";
             this._indietroButton.UseVisualStyleBackColor = true;
+            // 
+            // _newPietanzaButton
+            // 
+            this._newPietanzaButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._newPietanzaButton.Location = new System.Drawing.Point(286, 12);
+            this._newPietanzaButton.Name = "_newPietanzaButton";
+            this._newPietanzaButton.Size = new System.Drawing.Size(119, 43);
+            this._newPietanzaButton.TabIndex = 1;
+            this._newPietanzaButton.Text = "&Nuova";
+            this._newPietanzaButton.UseVisualStyleBackColor = true;
             // 
             // MenuForm
             // 
@@ -156,8 +170,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button _indietroButton;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button _newPietanzaButton;
     }
 }

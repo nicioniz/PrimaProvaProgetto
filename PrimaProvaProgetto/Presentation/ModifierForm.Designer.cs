@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this._okButton = new System.Windows.Forms.Button();
-            this._cancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._cancelButton = new System.Windows.Forms.Button();
+            this._okButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,27 +59,6 @@
             this.splitContainer1.SplitterDistance = 385;
             this.splitContainer1.TabIndex = 0;
             // 
-            // _okButton
-            // 
-            this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._okButton.Location = new System.Drawing.Point(329, 22);
-            this._okButton.Name = "_okButton";
-            this._okButton.Size = new System.Drawing.Size(75, 34);
-            this._okButton.TabIndex = 0;
-            this._okButton.Text = "&OK";
-            this._okButton.UseVisualStyleBackColor = true;
-            // 
-            // _cancelButton
-            // 
-            this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._cancelButton.Location = new System.Drawing.Point(432, 22);
-            this._cancelButton.Name = "_cancelButton";
-            this._cancelButton.Size = new System.Drawing.Size(75, 34);
-            this._cancelButton.TabIndex = 1;
-            this._cancelButton.Text = "&Indietro";
-            this._cancelButton.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
@@ -93,6 +72,27 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 385);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // _cancelButton
+            // 
+            this._cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._cancelButton.Location = new System.Drawing.Point(432, 22);
+            this._cancelButton.Name = "_cancelButton";
+            this._cancelButton.Size = new System.Drawing.Size(75, 34);
+            this._cancelButton.TabIndex = 1;
+            this._cancelButton.Text = "&Annulla";
+            this._cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // _okButton
+            // 
+            this._okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._okButton.Location = new System.Drawing.Point(329, 22);
+            this._okButton.Name = "_okButton";
+            this._okButton.Size = new System.Drawing.Size(75, 34);
+            this._okButton.TabIndex = 0;
+            this._okButton.Text = "&OK";
+            this._okButton.UseVisualStyleBackColor = true;
             // 
             // ModifierForm
             // 

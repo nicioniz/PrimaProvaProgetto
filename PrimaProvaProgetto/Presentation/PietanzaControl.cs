@@ -46,13 +46,14 @@ namespace PrimaProvaProgetto.Presentation
                 _pietanza = value;
                 _pietanza.Changed += _pietanza_Changed;
                 _modificaToolStripMenuItem.Tag = Pietanza;
+                _eliminaToolStripMenuItem.Tag = Pietanza;
                 Draw();
             }
         }
 
         private void Draw()
         {
-            _nomeLabel.Text = Pietanza.Titolo;
+            _nomeLabel.Text = Pietanza.Titolo + ((Pietanza.Descrizione == "") ? ("") : (Environment.NewLine)) + Pietanza.Descrizione;
             _disponibileCheckBox.Checked = Pietanza.Disponibile;
         }
 
@@ -68,6 +69,14 @@ namespace PrimaProvaProgetto.Presentation
                 return _modificaToolStripMenuItem;
             }
         }
-        
+
+        public ToolStripMenuItem Elimina
+        {
+            get
+            {
+                return _eliminaToolStripMenuItem;
+            }
+        }
+
     }
 }

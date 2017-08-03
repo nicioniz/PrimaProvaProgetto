@@ -33,6 +33,7 @@
             this._disponibileCheckBox = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this._disponibileCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._disponibileCheckBox.AutoSize = true;
-            this._disponibileCheckBox.Location = new System.Drawing.Point(223, 15);
+            this._disponibileCheckBox.Location = new System.Drawing.Point(155, 15);
             this._disponibileCheckBox.Name = "_disponibileCheckBox";
             this._disponibileCheckBox.Size = new System.Drawing.Size(22, 21);
             this._disponibileCheckBox.TabIndex = 1;
@@ -59,25 +60,33 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._modificaToolStripMenuItem});
+            this._modificaToolStripMenuItem,
+            this._eliminaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 34);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 97);
             // 
             // _modificaToolStripMenuItem
             // 
             this._modificaToolStripMenuItem.Name = "_modificaToolStripMenuItem";
-            this._modificaToolStripMenuItem.Size = new System.Drawing.Size(153, 30);
+            this._modificaToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
             this._modificaToolStripMenuItem.Text = "&Modifica";
+            // 
+            // _eliminaToolStripMenuItem
+            // 
+            this._eliminaToolStripMenuItem.Name = "_eliminaToolStripMenuItem";
+            this._eliminaToolStripMenuItem.Size = new System.Drawing.Size(198, 30);
+            this._eliminaToolStripMenuItem.Text = "&Elimina";
             // 
             // PietanzaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this._disponibileCheckBox);
             this.Controls.Add(this._nomeLabel);
             this.Name = "PietanzaControl";
-            this.Size = new System.Drawing.Size(264, 51);
+            this.Size = new System.Drawing.Size(196, 51);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,5 +99,6 @@
         private System.Windows.Forms.CheckBox _disponibileCheckBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem _modificaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _eliminaToolStripMenuItem;
     }
 }

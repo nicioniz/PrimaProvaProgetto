@@ -30,8 +30,13 @@ namespace PrimaProvaProgetto
             //    4.5m, Categoria.Antipasto,new List<Allergene>());
             //mfp.SetEditableObject(piet);
             //Application.Run(f);
-            Application.Run(new Test());
+            //Application.Run(new Test());
             //f.ShowDialog();
+
+            Ristorante.GetInstance().Menu = InitMenu();
+            MenuForm mf = new MenuForm();
+            MenuFormPresenter mfp = new MenuFormPresenter(mf);
+            Application.Run(mf);
         }
 
         static void Tests()
@@ -40,6 +45,35 @@ namespace PrimaProvaProgetto
             //PietanzaTest.Test();
             //CriteriDiSelezioneTest.Test();
             //AlgoritmoPrevisioneFactoryTest.Test();
+        }
+
+        static List<Pietanza> InitMenu()
+        {
+            List<Allergene> empty = new List<Allergene>();
+            List<Pietanza> res = new List<Pietanza>();
+            res.Add(new Pietanza(
+                "Prosciutto e melone",
+                5.0m,
+                Categoria.Antipasto,
+                empty,
+                "Antipasto fresco e molto buono con materie prime di qualità",
+                true));
+
+            res.Add(new Pietanza(
+                "Spaghetti al pesto",
+                7.50m,
+                Categoria.Primo,
+                empty,
+                "",
+                false));
+            res.Add(new Pietanza(
+                "Tiramisù",
+                3.0m,
+                Categoria.Dolce,
+                empty,
+                "",
+                true));
+            return res;
         }
     }
 }
