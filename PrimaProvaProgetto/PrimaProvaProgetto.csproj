@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +59,8 @@
     <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
+    <Compile Include="Model\ILayoutPersister.cs" />
+    <Compile Include="Model\IMenuPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />
@@ -63,6 +69,9 @@
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Persistance\LayoutPersisterFactory.cs" />
+    <Compile Include="Persistance\MenuPersisterFactory.cs" />
+    <Compile Include="Persistance\SimpleJsonLayoutPersister.cs" />
     <Compile Include="Presentation\AllergeniModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +173,7 @@
     <EmbeddedResource Include="Tests\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
