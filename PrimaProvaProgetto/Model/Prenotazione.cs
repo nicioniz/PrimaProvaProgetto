@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,7 +53,7 @@ namespace PrimaProvaProgetto.Model
             }
         }
 
-        [Editabile(Modifier = typeof(NumericUpDown))]
+        [Editabile(Modifier = typeof(IntModifier))]
         public int NumeroCoperti
         {
             get

@@ -52,7 +52,7 @@
     <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
-    <Compile Include="Model\EditabileAttrinute.cs" />
+    <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
     <Compile Include="Model\Money.cs" />
@@ -81,6 +81,10 @@
     <Compile Include="Presentation\FirstWindowForm.Designer.cs">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\IModifierControl.cs" />
+    <Compile Include="Presentation\IntModifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Presentation\LayoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,17 +97,24 @@
     <Compile Include="Presentation\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Presentation\ModifierForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.Designer.cs">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <Compile Include="Presentation\ModifierForm.Designer.cs">
+      <DependentUpon>ModifierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ModifierFormPresenter.cs" />
+    <Compile Include="Presentation\MoneyModifier.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presentation\PietanzaControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\PietanzaControl.Designer.cs">
       <DependentUpon>PietanzaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\StringModifier.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presenter\CalcolaTempo.cs" />
     <Compile Include="Program.cs" />
@@ -133,8 +144,8 @@
     <EmbeddedResource Include="Presentation\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\MoneyModifier.resx">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ModifierForm.resx">
+      <DependentUpon>ModifierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PietanzaControl.resx">
       <DependentUpon>PietanzaControl.cs</DependentUpon>

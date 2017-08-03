@@ -11,7 +11,7 @@ using PrimaProvaProgetto.Model;
 
 namespace PrimaProvaProgetto.Presentation
 {
-    public partial class AllergeniModifier : UserControl
+    public partial class AllergeniModifier : UserControl, IModifierControl
     {
         public AllergeniModifier()
         {
@@ -44,6 +44,18 @@ namespace PrimaProvaProgetto.Presentation
                     .ToList()
                     .Find(c => c.Tag == all).Checked = true);
             }
+        }
+
+        public object MyValue
+        {
+            get { return Value; }
+            set { Value = (List<Allergene>)value; }
+        }
+
+        public List<Allergene> Value
+        {
+            get { return Allergeni; }
+            set { Allergeni = value; }
         }
 
     }

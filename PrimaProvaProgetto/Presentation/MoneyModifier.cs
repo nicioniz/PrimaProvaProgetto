@@ -1,34 +1,25 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Model;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PrimaProvaProgetto.Model;
 
 namespace PrimaProvaProgetto.Presentation
 {
-    public partial class MoneyModifier : UserControl
+    class MoneyModifier : NumericUpDown, IModifierControl
     {
         public MoneyModifier()
         {
-            InitializeComponent();
+            DecimalPlaces = 2;
+            Increment = 0.01m;
         }
 
-        public Money MoneyValue
+        public object MyValue
         {
-            set
-            {
-                _numericUpDown.Value = value;
-            }
-
-            get
-            {
-                return new Money(_numericUpDown.Value);
-            }
+            get { return new Money(Value); }
+            set { Value = (Money)value; }
         }
     }
 }

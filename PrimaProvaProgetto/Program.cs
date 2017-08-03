@@ -1,4 +1,5 @@
-﻿using PrimaProvaProgetto.Presentation;
+﻿using PrimaProvaProgetto.Model;
+using PrimaProvaProgetto.Presentation;
 using PrimaProvaProgetto.Tests;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,19 @@ namespace PrimaProvaProgetto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LayoutForm());
-            (new Test()).Show();
+            //Application.Run(new LayoutForm());
+            //(new Test()).Show();
 
             //Tests();
+
+            //ModifierForm f = new ModifierForm();
+            //ModifierFormPresenter mfp = new ModifierFormPresenter(f);
+            //Pietanza piet = new Pietanza("primissimo piatto",
+            //    4.5m, Categoria.Antipasto,new List<Allergene>());
+            //mfp.SetEditableObject(piet);
+            //Application.Run(f);
+            Application.Run(new Test());
+            //f.ShowDialog();
         }
 
         static void Tests()
@@ -29,7 +39,7 @@ namespace PrimaProvaProgetto
             //MoneyTest.Test();
             //PietanzaTest.Test();
             //CriteriDiSelezioneTest.Test();
-            AlgoritmoPrevisioneFactoryTest.Test();
+            //AlgoritmoPrevisioneFactoryTest.Test();
         }
     }
 }
