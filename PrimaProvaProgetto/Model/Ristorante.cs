@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -73,8 +74,9 @@ namespace PrimaProvaProgetto.Model
 
         private Ristorante()
         {
-            Menu = new List<Pietanza>();
+            Menu = MenuPersisterFactory.GetLayoutLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
+            Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto);
             Allergeni = LoadAllergeni();
             //possiamo mettere il caricamento da file
             

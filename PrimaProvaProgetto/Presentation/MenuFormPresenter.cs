@@ -40,10 +40,13 @@ namespace PrimaProvaProgetto.Presentation
         private void buttonNuovaPietanza_Click(object sender, EventArgs e)
         {
             Pietanza newPietanza = new Pietanza("", 0m, Categoria.Antipasto, new List<Allergene>());
-            InsertPietanza(newPietanza);
-            Ristorante.GetInstance().Menu.Add(newPietanza);
             _modifierFormPresenter.SetEditableObject(newPietanza);
-            _modifierForm.ShowDialog();
+            if(_modifierForm.ShowDialog() == DialogResult.OK)
+            {
+                InsertPietanza(newPietanza);
+                Ristorante.GetInstance().Menu.Add(newPietanza);
+            }
+
         }
 
         private void buttonIndietro_Click(object sender, EventArgs e)
