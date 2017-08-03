@@ -1,4 +1,5 @@
-﻿using PrimaProvaProgetto.Presenter;
+﻿using PrimaProvaProgetto.Presentation;
+using PrimaProvaProgetto.Presenter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,14 @@ namespace PrimaProvaProgetto.Model
         private int _postiMax;
         private StatoTavolo _stato;
 
+        [Editabile(Modifier = typeof(IntModifier))]
         public int Coperti
         {
             get { return _coperti; }
             set { if (value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value;}
         }
 
+        [Editabile(Modifier = typeof(IntModifier))]
         public int PostiMax
         {
             get { return _postiMax; }
