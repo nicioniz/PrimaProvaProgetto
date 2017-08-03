@@ -73,6 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this._disponibileCheckBox);
             this.Controls.Add(this._nomeLabel);
             this.Name = "PietanzaControl";

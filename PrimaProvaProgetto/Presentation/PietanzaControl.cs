@@ -45,6 +45,7 @@ namespace PrimaProvaProgetto.Presentation
             {
                 _pietanza = value;
                 _pietanza.Changed += _pietanza_Changed;
+                _modificaToolStripMenuItem.Tag = Pietanza;
                 Draw();
             }
         }
