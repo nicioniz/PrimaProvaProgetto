@@ -25,8 +25,8 @@ namespace PrimaProvaProgetto.Presentation
         private void Application_Idle(object sender, EventArgs e)
         {
             Target.AvvioTotemClientiButton.Enabled =
-                Ristorante.GetInstance().Menu.Where(p => p.Disponibile).Count() != 0;// &&
-                //Ristorante.GetInstance().Tavoli.Count != 0;
+                Ristorante.GetInstance().Menu.Where(p => p.Disponibile).Count() != 0 &&
+                Ristorante.GetInstance().Tavoli.Count != 0;
         }
 
         private void AvvioTotemClientiButton_Click(object sender, EventArgs e)
@@ -43,7 +43,12 @@ namespace PrimaProvaProgetto.Presentation
                 Target.MenuButton.Enabled = false;
 
                 //si dovrà lanciare la vista col presenter del totem clienti
-                throw new NotImplementedException();
+                ClientiForm cf = new ClientiForm();
+                new ClientiFormSelezioneMenuPresenter(cf);
+                cf.Show();
+
+                //e la vista col presenter per il totem del cameriere
+                //throw new NotImplementedException();
             }
         }
 

@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PrimaProvaProgetto.Model
 {
@@ -81,7 +82,14 @@ namespace PrimaProvaProgetto.Model
             //possiamo mettere il caricamento da file
             
             ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
-        }        
+            Application.ApplicationExit += Application_ApplicationExit;
+        }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            MenuPersisterFactory.GetMenuSaver("SimpleMenuSaver").Save(Menu);
+            LayoutPersisterFactory.GetLayoutSaver("SimpleJsonLayoutSaver").Save(Tavoli);
+        }
 
         public static Ristorante GetInstance()
         {

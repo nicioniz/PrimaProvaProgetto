@@ -56,6 +56,7 @@
     <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
+    <Compile Include="Model\CriterioDiSelezioneBuilder.cs" />
     <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
@@ -84,6 +85,14 @@
     <Compile Include="Presentation\CategoriaModifier.Designer.cs">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\ClientiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ClientiForm.Designer.cs">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ClientiFormSelezioneMenuPresenter.cs" />
+    <Compile Include="Presentation\DataGridViewExtensions.cs" />
     <Compile Include="Presentation\FirstWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ClientiForm.resx">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
