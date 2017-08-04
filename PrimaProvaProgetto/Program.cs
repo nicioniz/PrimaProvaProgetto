@@ -33,10 +33,17 @@ namespace PrimaProvaProgetto
             //Application.Run(new Test());
             //f.ShowDialog();
 
+            //Ristorante.GetInstance().Menu = InitMenu();
+            //MenuForm mf = new MenuForm();
+            //MenuFormPresenter mfp = new MenuFormPresenter(mf);
+            //Application.Run(mf);
+
+            //Application.Run(new LayoutForm());
+
             Ristorante.GetInstance().Menu = InitMenu();
-            MenuForm mf = new MenuForm();
-            MenuFormPresenter mfp = new MenuFormPresenter(mf);
-            Application.Run(mf);
+            FirstWindowForm f = new FirstWindowForm();
+            new FirstWindowFormPresenter(f);
+            Application.Run(f);
         }
 
         static void Tests()

@@ -21,6 +21,13 @@ namespace PrimaProvaProgetto.Presentation
             Target.SuspendLayout();
 
             DrawPietanze();
+            
+            Target.IndietroButton.Click += buttonIndietro_Click;
+            Target.NuovaPietanzaButton.Click += buttonNuovaPietanza_Click;
+
+
+            _modifierForm = new ModifierForm();
+            _modifierFormPresenter = new ModifierFormPresenter(_modifierForm);
 
             Target.ResumeLayout(false);
         }
@@ -30,12 +37,6 @@ namespace PrimaProvaProgetto.Presentation
             Target.TableLayoutPanel.Controls.Clear();
             foreach (Pietanza p in Ristorante.GetInstance().Menu)
                 InsertPietanza(p);
-
-            _modifierForm = new ModifierForm();
-            _modifierFormPresenter = new ModifierFormPresenter(_modifierForm);
-
-            Target.IndietroButton.Click += buttonIndietro_Click;
-            Target.NuovaPietanzaButton.Click += buttonNuovaPietanza_Click;
         }
 
         private void buttonNuovaPietanza_Click(object sender, EventArgs e)
@@ -81,7 +82,8 @@ namespace PrimaProvaProgetto.Presentation
         private void buttonElimina_Click(object sender, EventArgs e)
         {
             Pietanza toDelete = (Pietanza)((ToolStripMenuItem)sender).Tag;
-            DialogResult dr = MessageBox.Show("Sei sicuro di voler eliminare la pietanza " + toDelete.Titolo + "?",
+            DialogResult dr = MessageBox.Show(
+                "Sei sicuro di voler eliminare la pietanza " + toDelete.Titolo + "?",
                 "Conferma Eliminazione",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning,

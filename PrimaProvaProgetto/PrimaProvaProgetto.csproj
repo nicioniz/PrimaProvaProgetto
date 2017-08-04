@@ -90,6 +90,7 @@
     <Compile Include="Presentation\FirstWindowForm.Designer.cs">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\FirstWindowFormPresenter.cs" />
     <Compile Include="Presentation\IModifierControl.cs" />
     <Compile Include="Presentation\IntModifier.cs">
       <SubType>Component</SubType>
