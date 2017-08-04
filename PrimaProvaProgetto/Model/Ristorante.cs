@@ -74,7 +74,7 @@ namespace PrimaProvaProgetto.Model
 
         private Ristorante()
         {
-            Menu = MenuPersisterFactory.GetLayoutLoader("SimpleMenuLoader").Load();
+            Menu = MenuPersisterFactory.GetMenuLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
             Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto);
             Allergeni = LoadAllergeni();

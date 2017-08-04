@@ -36,13 +36,9 @@ namespace PrimaProvaProgetto.Persistance
                     res = JsonConvert.DeserializeObject<List<Tavolo>>(json);
                 }
             }
-            catch (FileNotFoundException)
-            {
-                //aggiungere finestra di errore??
-                return new List<Tavolo>();
-            }
+            catch (FileNotFoundException) {}
 
-            return res;
+            return (res == null) ? (new List<Tavolo>()) : (res);
         }
     }
 

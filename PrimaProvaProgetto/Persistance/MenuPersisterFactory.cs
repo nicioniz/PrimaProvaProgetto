@@ -38,14 +38,14 @@ namespace PrimaProvaProgetto.Persistance
                     (IMenuLoader)type.GetConstructor(Type.EmptyTypes).Invoke(Type.EmptyTypes)));
         }
 
-        public static IMenuLoader GetLayoutLoader(string nome)
+        public static IMenuLoader GetMenuLoader(string nome)
         {
             if (!_loader.ContainsKey(nome))
                 throw new ArgumentException(nome);
             return _loader[nome];
         }
 
-        public static IMenuSaver GetLayoutSaver(string nome)
+        public static IMenuSaver GetMenuSaver(string nome)
         {
             if (!_saver.ContainsKey(nome))
                 throw new ArgumentException(nome);
@@ -53,12 +53,14 @@ namespace PrimaProvaProgetto.Persistance
         }
     }
 
-
+    /*
+     * Non salva il il prezzo, quindi non è proprio funzionante 
+     */
     class SimpleMenuLoader : IMenuLoader
     {
         public List<Pietanza> Load()
         {
-            List<Pietanza> res = new List<Pietanza>();
+            List<Pietanza> res = null;
             try
             {
                 using (StreamReader r = new StreamReader("menu.json"))
@@ -72,7 +74,7 @@ namespace PrimaProvaProgetto.Persistance
                 //aggiungere finestra di errore??
             }
 
-            return res;
+            return (res == null) ? (new List<Pietanza>()) : (res);
         }
     }
 
