@@ -41,14 +41,14 @@ namespace PrimaProvaProgetto
             //Application.Run(new LayoutForm());
 
             Ristorante.GetInstance().Menu = InitMenu();
-            //FirstWindowForm f = new FirstWindowForm();
-            //new FirstWindowFormPresenter(f);
-            //Application.Run(f);
+            FirstWindowForm f = new FirstWindowForm();
+            new FirstWindowFormPresenter(f);
+            Application.Run(f);
 
-            ClientiForm cf = new ClientiForm();
-            new ClientiFormSelezioneMenuPresenter(cf);
+            //ClientiForm cf = new ClientiForm();
+            //new ClientiFormSelezioneMenuPresenter(cf);
 
-            Application.Run(cf);
+            //Application.Run(cf);
         }
 
         static void Tests()

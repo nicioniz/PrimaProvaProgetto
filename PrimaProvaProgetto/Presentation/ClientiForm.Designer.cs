@@ -37,7 +37,22 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this._menuDataGridView = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this._aggiungiPrenotazioneButton = new System.Windows.Forms.Button();
+            this._panelAttesaPers1 = new System.Windows.Forms.TableLayoutPanel();
+            this._panelAttesaPers3 = new System.Windows.Forms.TableLayoutPanel();
+            this._panelAttesaPers5 = new System.Windows.Forms.TableLayoutPanel();
+            this._panelAttesaPers7 = new System.Windows.Forms.TableLayoutPanel();
+            this._labelAttesaPers1 = new System.Windows.Forms.Label();
+            this._labelAttesaPers3 = new System.Windows.Forms.Label();
+            this._labelAttesaPers5 = new System.Windows.Forms.Label();
+            this._labelAttesaPers7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,6 +66,11 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._menuDataGridView)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this._panelAttesaPers1.SuspendLayout();
+            this._panelAttesaPers3.SuspendLayout();
+            this._panelAttesaPers5.SuspendLayout();
+            this._panelAttesaPers7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -67,7 +87,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(976, 661);
             this.splitContainer1.SplitterDistance = 334;
             this.splitContainer1.TabIndex = 0;
@@ -179,14 +199,196 @@
             this._menuDataGridView.Size = new System.Drawing.Size(334, 349);
             this._menuDataGridView.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this._panelAttesaPers7, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this._panelAttesaPers5, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this._panelAttesaPers3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this._aggiungiPrenotazioneButton, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this._panelAttesaPers1, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(638, 661);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(118, 168);
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(95, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(355, 241);
+            this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Ancora da aggiungere la visualizzazione dei tempi di attesa per i clienti";
+            this.label3.Text = "Numero Persone";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(395, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Tempo attesa previsto";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "1-2";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(143, 290);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 20);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "3-4";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(143, 410);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 20);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "5-6";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(146, 530);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 20);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "7+";
+            // 
+            // _aggiungiPrenotazioneButton
+            // 
+            this._aggiungiPrenotazioneButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._aggiungiPrenotazioneButton.Location = new System.Drawing.Point(380, 611);
+            this._aggiungiPrenotazioneButton.Name = "_aggiungiPrenotazioneButton";
+            this._aggiungiPrenotazioneButton.Size = new System.Drawing.Size(197, 39);
+            this._aggiungiPrenotazioneButton.TabIndex = 10;
+            this._aggiungiPrenotazioneButton.Text = "&Aggiungi prenotazione";
+            this._aggiungiPrenotazioneButton.UseVisualStyleBackColor = true;
+            // 
+            // _panelAttesaPers1
+            // 
+            this._panelAttesaPers1.ColumnCount = 1;
+            this._panelAttesaPers1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers1.Controls.Add(this._labelAttesaPers1, 0, 0);
+            this._panelAttesaPers1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._panelAttesaPers1.Location = new System.Drawing.Point(322, 123);
+            this._panelAttesaPers1.Name = "_panelAttesaPers1";
+            this._panelAttesaPers1.RowCount = 1;
+            this._panelAttesaPers1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this._panelAttesaPers1.Size = new System.Drawing.Size(313, 114);
+            this._panelAttesaPers1.TabIndex = 11;
+            // 
+            // _panelAttesaPers3
+            // 
+            this._panelAttesaPers3.ColumnCount = 1;
+            this._panelAttesaPers3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers3.Controls.Add(this._labelAttesaPers3, 0, 0);
+            this._panelAttesaPers3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._panelAttesaPers3.Location = new System.Drawing.Point(322, 243);
+            this._panelAttesaPers3.Name = "_panelAttesaPers3";
+            this._panelAttesaPers3.RowCount = 1;
+            this._panelAttesaPers3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this._panelAttesaPers3.Size = new System.Drawing.Size(313, 114);
+            this._panelAttesaPers3.TabIndex = 12;
+            // 
+            // _panelAttesaPers5
+            // 
+            this._panelAttesaPers5.ColumnCount = 1;
+            this._panelAttesaPers5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers5.Controls.Add(this._labelAttesaPers5, 0, 0);
+            this._panelAttesaPers5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._panelAttesaPers5.Location = new System.Drawing.Point(322, 363);
+            this._panelAttesaPers5.Name = "_panelAttesaPers5";
+            this._panelAttesaPers5.RowCount = 1;
+            this._panelAttesaPers5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this._panelAttesaPers5.Size = new System.Drawing.Size(313, 114);
+            this._panelAttesaPers5.TabIndex = 13;
+            // 
+            // _panelAttesaPers7
+            // 
+            this._panelAttesaPers7.ColumnCount = 1;
+            this._panelAttesaPers7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers7.Controls.Add(this._labelAttesaPers7, 0, 0);
+            this._panelAttesaPers7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._panelAttesaPers7.Location = new System.Drawing.Point(322, 483);
+            this._panelAttesaPers7.Name = "_panelAttesaPers7";
+            this._panelAttesaPers7.RowCount = 1;
+            this._panelAttesaPers7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._panelAttesaPers7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this._panelAttesaPers7.Size = new System.Drawing.Size(313, 114);
+            this._panelAttesaPers7.TabIndex = 14;
+            // 
+            // _labelAttesaPers1
+            // 
+            this._labelAttesaPers1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._labelAttesaPers1.AutoSize = true;
+            this._labelAttesaPers1.Location = new System.Drawing.Point(156, 47);
+            this._labelAttesaPers1.Name = "_labelAttesaPers1";
+            this._labelAttesaPers1.Size = new System.Drawing.Size(0, 20);
+            this._labelAttesaPers1.TabIndex = 0;
+            // 
+            // _labelAttesaPers3
+            // 
+            this._labelAttesaPers3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._labelAttesaPers3.AutoSize = true;
+            this._labelAttesaPers3.Location = new System.Drawing.Point(156, 47);
+            this._labelAttesaPers3.Name = "_labelAttesaPers3";
+            this._labelAttesaPers3.Size = new System.Drawing.Size(0, 20);
+            this._labelAttesaPers3.TabIndex = 1;
+            // 
+            // _labelAttesaPers5
+            // 
+            this._labelAttesaPers5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._labelAttesaPers5.AutoSize = true;
+            this._labelAttesaPers5.Location = new System.Drawing.Point(156, 47);
+            this._labelAttesaPers5.Name = "_labelAttesaPers5";
+            this._labelAttesaPers5.Size = new System.Drawing.Size(0, 20);
+            this._labelAttesaPers5.TabIndex = 1;
+            // 
+            // _labelAttesaPers7
+            // 
+            this._labelAttesaPers7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._labelAttesaPers7.AutoSize = true;
+            this._labelAttesaPers7.Location = new System.Drawing.Point(156, 47);
+            this._labelAttesaPers7.Name = "_labelAttesaPers7";
+            this._labelAttesaPers7.Size = new System.Drawing.Size(0, 20);
+            this._labelAttesaPers7.TabIndex = 1;
             // 
             // ClientiForm
             // 
@@ -211,6 +413,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._menuDataGridView)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this._panelAttesaPers1.ResumeLayout(false);
+            this._panelAttesaPers1.PerformLayout();
+            this._panelAttesaPers3.ResumeLayout(false);
+            this._panelAttesaPers3.PerformLayout();
+            this._panelAttesaPers5.ResumeLayout(false);
+            this._panelAttesaPers5.PerformLayout();
+            this._panelAttesaPers7.ResumeLayout(false);
+            this._panelAttesaPers7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,6 +438,21 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView _menuDataGridView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button _aggiungiPrenotazioneButton;
+        private System.Windows.Forms.TableLayoutPanel _panelAttesaPers7;
+        private System.Windows.Forms.Label _labelAttesaPers7;
+        private System.Windows.Forms.TableLayoutPanel _panelAttesaPers5;
+        private System.Windows.Forms.Label _labelAttesaPers5;
+        private System.Windows.Forms.TableLayoutPanel _panelAttesaPers3;
+        private System.Windows.Forms.Label _labelAttesaPers3;
+        private System.Windows.Forms.TableLayoutPanel _panelAttesaPers1;
+        private System.Windows.Forms.Label _labelAttesaPers1;
     }
 }

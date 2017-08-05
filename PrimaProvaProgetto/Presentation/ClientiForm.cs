@@ -38,6 +38,13 @@ namespace PrimaProvaProgetto.Presentation
 
             MenuDataGridView.ShowCellToolTips = true;
             MenuDataGridView.CellToolTipTextNeeded += MenuDataGridView_CellToolTipTextNeeded;
+
+            PanelAttesaPers1.BackColor = Color.LightGreen;
+            LabelAttesaPers1.Text = "12 minuti";
+
+            PanelAttesaPers3.BackColor = Color.Orange;
+            LabelAttesaPers3.Text = "1 ora e 12 minuti";
+
         }
 
         private void MenuDataGridView_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
@@ -85,6 +92,45 @@ namespace PrimaProvaProgetto.Presentation
         public DataGridView MenuDataGridView
         {
             get { return _menuDataGridView; }
+        }
+
+        public Label LabelAttesaPers1
+        {
+            get { return _labelAttesaPers1; }
+        }
+        public Label LabelAttesaPers3
+        {
+            get { return _labelAttesaPers3; }
+        }
+        public Label LabelAttesaPers5
+        {
+            get { return _labelAttesaPers5; }
+        }
+        public Label LabelAttesaPers7
+        {
+            get { return _labelAttesaPers7; }
+        }
+
+        public TableLayoutPanel PanelAttesaPers1
+        {
+            get { return _panelAttesaPers1; }
+        }
+        public TableLayoutPanel PanelAttesaPers3
+        {
+            get { return _panelAttesaPers3; }
+        }
+        public TableLayoutPanel PanelAttesaPers5
+        {
+            get { return _panelAttesaPers5; }
+        }
+        public TableLayoutPanel PanelAttesaPers7
+        {
+            get { return _panelAttesaPers7; }
+        }
+
+        public Button AggiungiPrenotazioneButton
+        {
+            get { return _aggiungiPrenotazioneButton; }
         }
     }
 }

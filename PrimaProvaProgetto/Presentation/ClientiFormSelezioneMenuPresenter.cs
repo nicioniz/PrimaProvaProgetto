@@ -48,7 +48,7 @@ namespace PrimaProvaProgetto.Presentation
         private string GetToolTipText(int row)
         {
             DataGridViewRow element = Target.MenuDataGridView.Rows[row];
-            return element.Cells["Categoria"].Value + Environment.NewLine + element.Cells["Descrizione"].Value;
+            return element.Cells["Categoria"].Value + Environment.NewLine + Environment.NewLine + element.Cells["Descrizione"].Value;
         }
     }
 }
