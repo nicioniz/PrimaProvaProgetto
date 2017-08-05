@@ -111,6 +111,7 @@
     <Compile Include="Presentation\LayoutForm.Designer.cs">
       <DependentUpon>LayoutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\LayoutFormPresenter.cs" />
     <Compile Include="Presentation\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>

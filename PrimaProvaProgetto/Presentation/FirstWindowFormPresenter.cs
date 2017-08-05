@@ -48,7 +48,7 @@ namespace PrimaProvaProgetto.Presentation
                 cf.Show();
 
                 //e la vista col presenter per il totem del cameriere
-                //throw new NotImplementedException();
+                // TODO
             }
         }
 
@@ -62,7 +62,7 @@ namespace PrimaProvaProgetto.Presentation
         private void LayoutButton_Click(object sender, EventArgs e)
         {
             LayoutForm lf = new LayoutForm();
-
+            new LayoutFormPresenter(lf);
             lf.Show();
         }
 

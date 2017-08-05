@@ -15,7 +15,20 @@ namespace PrimaProvaProgetto.Presentation
         public LayoutForm()
         {
             InitializeComponent();
-            this.Text = "Scelta Layout";
+            
+            Rectangle resolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds;
+            if (resolution.Height < Size.Height || resolution.Width < Size.Width)
+            {
+                panel1.AutoScroll = true;
+                //La dimenione la riduco ulteriormente per evitare che finisca sotto la barra inferiore
+                //(solitamente la gente ha la barra in basso, so che non è il massimo come soluzione)
+                Size = new Size(resolution.Width, resolution.Height - 50);
+
+            }
+
+            //NON permette il ridimensionamento
+            MaximumSize = Size;
+            MinimumSize = Size;
         }
 
         /* NOTE: 
@@ -48,10 +61,9 @@ namespace PrimaProvaProgetto.Presentation
             foreach (PictureBox pb in tavoliBox)
             {
                 pb.AllowDrop = true;
-
-                pb.MouseDown += new MouseEventHandler(_2postiPictureBox_MouseDown);
-                pb.DragEnter += new DragEventHandler(_2postiPictureBox_DragEnter);
-                pb.DragDrop += new DragEventHandler(_2postiPictureBox_DragDrop);
+                pb.MouseEnter += new EventHandler(_postiPictureBox_MouseEnter);
+                pb.MouseLeave += new EventHandler(_postiPictureBox_MouseLeave);
+                pb.MouseDown += new MouseEventHandler(_postiPictureBox_MouseDown);
             }
 
 
@@ -68,9 +80,9 @@ namespace PrimaProvaProgetto.Presentation
         }
 
 
-        // L'evento indica il rilascio del pulsante del mouse (quindi sottintende 
-        //la fine dell'operazione di drop dell'immagine
-        private void _2postiPictureBox_MouseDown(object sender, MouseEventArgs e)
+        // L'evento indica la pressione del pulsante del mouse (quindi sottintende 
+        // l'inizio dell'operazione di drag dell'immagine)
+        private void _postiPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             pb.Select();
@@ -78,21 +90,6 @@ namespace PrimaProvaProgetto.Presentation
             {
                 pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
             }
-        }
-
-        //L'evento DragEnter viene triggerato quando un oggetto entra all'interno
-        //dei confini di un determinato controllo (nel nostro caso la pictureBox
-        //che ospita le immagini dei tavoli
-        private void _2postiPictureBox_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Copy;
-        }
-
-        //Evento triggerato quando viene completata l'operazione di trascinamento
-        private void _2postiPictureBox_DragDrop(object sender, DragEventArgs e)
-        {
-            PictureBox pb = (PictureBox)sender;
-            pb.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
         }
 
         private void _pictureBoxLayout11_MouseDown(object sender, MouseEventArgs e)
@@ -101,33 +98,41 @@ namespace PrimaProvaProgetto.Presentation
             pb.Select();
             if (pb.Image != null)
             {
-                pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
-                pb.Image = null;
                 if (e.Button == System.Windows.Forms.MouseButtons.Right)
                 {
-                    MessageBox.Show("Tavolo Eliminato");
-                    //
+                    pb.Image = null;
+                    MessageBox.Show("Tavolo Eliminato", "Elimina");
+                    // TODO
                     //qui bisogna eliminare il tavolo da una lista dei tavoli aggiunti
                     //nel presenter bisogna registrarsi ad un evento che triggera l'inserimento
                     //in una lista dei tavoli trascinati
                     //
                 }
+                else
+                {
+                    pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
+                    pb.Image = null;
+                }
             }
         }
 
+        //Evento triggerato quando viene completata l'operazione di trascinamento
         private void _pictureBoxLayout11_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             pb.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
         }
 
+        //L'evento DragEnter viene triggerato quando un oggetto entra all'interno
+        //dei confini di un determinato controllo (nel nostro caso la pictureBox
+        //che dovranno ospitare le immagini dei tavoli)
         private void _pictureBoxLayout11_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
         }
 
         //Qui gestisco il cambio di cursore sulle pictureBox di destra
-        private void _2postiPictureBox_MouseEnter(object sender, EventArgs e)
+        private void _postiPictureBox_MouseEnter(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             pb.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -135,11 +140,26 @@ namespace PrimaProvaProgetto.Presentation
         }
 
         //Qui gestisco il cambio di cursore sulle pictureBox di destra
-        private void _2postiPictureBox_MouseLeave(object sender, EventArgs e)
+        private void _postiPictureBox_MouseLeave(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
             pb.SizeMode = PictureBoxSizeMode.Zoom;
             pb.Cursor = Cursors.Default;
+        }
+
+        public Button IndietroButton
+        {
+            get { return _indietroButton; }
+        }
+
+        public Button CaricaButton
+        {
+            get { return _caricaButton; }
+        }
+
+        public Button ConfermaButton
+        {
+            get { return _confermaButton; }
         }
     }
 }
