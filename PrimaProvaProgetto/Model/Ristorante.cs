@@ -77,7 +77,12 @@ namespace PrimaProvaProgetto.Model
         {
             Menu = MenuPersisterFactory.GetMenuLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
-            Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto);
+            /* 
+            * Per ora al Ristorante ho lasciato una lista di soli tavoli, non so se possa servire un altro sistema
+            * magari la Form dei camerieri avrà anch'essa bisogno delle coordinate dei tavoli,
+            * ma mettere tali informazioni qui forse mescola dati con grafica
+            */
+            Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto).Values.ToList();
             Allergeni = LoadAllergeni();
             //possiamo mettere il caricamento da file
             
@@ -87,8 +92,12 @@ namespace PrimaProvaProgetto.Model
 
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
+            /*
+             * Potrebbe essere meglio spostare anche questo salvataggio?
+             * Forse farlo al momento dell'avvio del totem clienti riduce il rischio di perderlo
+             * (magari va tutto in crash prima della chiusura dell'applicazione)
+             */
             MenuPersisterFactory.GetMenuSaver("SimpleMenuSaver").Save(Menu);
-            LayoutPersisterFactory.GetLayoutSaver("SimpleJsonLayoutSaver").Save(Tavoli);
         }
 
         public static Ristorante GetInstance()

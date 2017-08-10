@@ -11,10 +11,10 @@ namespace PrimaProvaProgetto.Persistance
 {
     class SimpleJsonLayoutLoader : ILayoutLoader
     {
-        public List<Tavolo> Load(TipoLayout tipo)
+        public Dictionary<String, Tavolo> Load(TipoLayout tipo)
         {
             string fileName;
-            List<Tavolo> res = null;
+            Dictionary<String, Tavolo> res = null;
 
             switch (tipo)
             {
@@ -25,7 +25,7 @@ namespace PrimaProvaProgetto.Persistance
                     fileName = "ultimo.json";
                     break;
                 default:
-                    return new List<Tavolo>();
+                    return new Dictionary<String, Tavolo>();
             }
 
             try
@@ -33,18 +33,18 @@ namespace PrimaProvaProgetto.Persistance
                 using (StreamReader r = new StreamReader(fileName))
                 {
                     string json = r.ReadToEnd();
-                    res = JsonConvert.DeserializeObject<List<Tavolo>>(json);
+                    res = JsonConvert.DeserializeObject<Dictionary<String, Tavolo>>(json);
                 }
             }
             catch (FileNotFoundException) {}
 
-            return (res == null) ? (new List<Tavolo>()) : (res);
+            return (res == null) ? (new Dictionary<String, Tavolo>()) : (res);
         }
     }
 
     class SimpleJsonLayoutSaver : ILayoutSaver
     {
-        public void Save(List<Tavolo> layout)
+        public void Save(Dictionary<String, Tavolo> layout)
         {
             try
             {

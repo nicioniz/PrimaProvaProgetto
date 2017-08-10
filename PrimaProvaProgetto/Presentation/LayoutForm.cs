@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,12 @@ namespace PrimaProvaProgetto.Presentation
 
             }
 
+            foreach (TipoLayout tipo in Enum.GetValues(typeof(TipoLayout)))
+            {
+                CaricaComboBox.Items.Add(tipo);
+            }
+            CaricaComboBox.SelectedIndex = 0;
+            
             //NON permette il ridimensionamento
             MaximumSize = Size;
             MinimumSize = Size;
@@ -86,9 +93,9 @@ namespace PrimaProvaProgetto.Presentation
         {
             PictureBox pb = (PictureBox)sender;
             pb.Select();
-            if (pb.Image != null)
+            if (pb.Tag != null)
             {
-                pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
+                pb.DoDragDrop(pb.Tag, DragDropEffects.Copy);
             }
         }
 
@@ -96,22 +103,19 @@ namespace PrimaProvaProgetto.Presentation
         {
             PictureBox pb = (PictureBox)sender;
             pb.Select();
-            if (pb.Image != null)
+            if (pb.Tag != null)
             {
                 if (e.Button == System.Windows.Forms.MouseButtons.Right)
                 {
                     pb.Image = null;
+                    pb.Tag = null;
                     MessageBox.Show("Tavolo Eliminato", "Elimina");
-                    // TODO
-                    //qui bisogna eliminare il tavolo da una lista dei tavoli aggiunti
-                    //nel presenter bisogna registrarsi ad un evento che triggera l'inserimento
-                    //in una lista dei tavoli trascinati
-                    //
                 }
                 else
                 {
-                    pb.DoDragDrop(pb.Image, DragDropEffects.Copy);
+                    pb.DoDragDrop(pb.Tag, DragDropEffects.Copy);
                     pb.Image = null;
+                    pb.Tag = null;
                 }
             }
         }
@@ -120,7 +124,10 @@ namespace PrimaProvaProgetto.Presentation
         private void _pictureBoxLayout11_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            pb.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+            pb.Tag = (String)e.Data.GetData(DataFormats.StringFormat);
+            String propertyToInvoke = "Posti" + pb.Tag + "PictureBox";
+            PictureBox pbDestra = (PictureBox)this.GetType().GetProperty(propertyToInvoke).GetValue(this);
+            pb.Image = pbDestra.Image;
         }
 
         //L'evento DragEnter viene triggerato quando un oggetto entra all'interno
@@ -151,15 +158,40 @@ namespace PrimaProvaProgetto.Presentation
         {
             get { return _indietroButton; }
         }
-
-        public Button CaricaButton
+        
+        public ComboBox CaricaComboBox
         {
-            get { return _caricaButton; }
+            get { return _caricaComboBox; }
         }
 
         public Button ConfermaButton
         {
             get { return _confermaButton; }
+        }
+
+        public PictureBox Posti2PictureBox
+        {
+            get { return _2postiPictureBox; }
+        }
+
+        public PictureBox Posti4PictureBox
+        {
+            get { return _4postiPictureBox; }
+        }
+
+        public PictureBox Posti6PictureBox
+        {
+            get { return _6postiPictureBox; }
+        }
+
+        public PictureBox Posti8PictureBox
+        {
+            get { return _8postiPictureBox; }
+        }
+
+        public TableLayoutPanel TableLayoutPanel2
+        {
+            get { return tableLayoutPanel2; }
         }
     }
 }

@@ -60,8 +60,8 @@
     <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
-    <Compile Include="Model\ILayoutPersister.cs" />
-    <Compile Include="Model\IMenuPersister.cs" />
+    <Compile Include="Persistance\ILayoutPersister.cs" />
+    <Compile Include="Persistance\IMenuPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />

@@ -1,4 +1,5 @@
-﻿using PrimaProvaProgetto.Presentation;
+﻿using Newtonsoft.Json;
+using PrimaProvaProgetto.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,28 @@ namespace PrimaProvaProgetto.Model
         private int _postiMax;
         private StatoTavolo _stato;
 
+        [JsonConstructor]
+        public Tavolo(int postiMax, StatoTavolo stato)
+        {
+            PostiMax = postiMax;
+            Stato = stato;
+        }
+
+        // Forse si potrebbe anche togliere questo costruttore, visto che i coperti andranno settati
+        // nel momento in cui i clienti si accomodano
+        public Tavolo(int coperti, int postiMax, StatoTavolo stato)
+        {
+            Coperti = coperti;
+            PostiMax = postiMax;
+            Stato = stato;
+        }
+
+
         [Editabile(Modifier = typeof(IntModifier))]
         public int Coperti
         {
             get { return _coperti; }
-            set { if (value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value;}
+            set { if (Stato.Equals(StatoTavolo.Occupato) && value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value;}
         }
 
         [Editabile(Modifier = typeof(IntModifier))]
@@ -39,15 +57,6 @@ namespace PrimaProvaProgetto.Model
             get { return _stato; }
             set { _stato = value;}
         }
-
-
-        public Tavolo(int coperti, int postimax, StatoTavolo stato)
-        {  
-            Coperti = coperti;
-            PostiMax = postimax;
-            Stato = stato;
-        }
-
     }
 }
 

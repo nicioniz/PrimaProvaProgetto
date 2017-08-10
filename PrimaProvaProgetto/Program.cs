@@ -1,8 +1,11 @@
-﻿using PrimaProvaProgetto.Model;
+﻿using Newtonsoft.Json;
+using PrimaProvaProgetto.Model;
+using PrimaProvaProgetto.Persistance;
 using PrimaProvaProgetto.Presentation;
 using PrimaProvaProgetto.Tests;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,6 +44,7 @@ namespace PrimaProvaProgetto
             //Application.Run(new LayoutForm());
 
             Ristorante.GetInstance().Menu = InitMenu();
+            SetDefaultLayout();
             FirstWindowForm f = new FirstWindowForm();
             new FirstWindowFormPresenter(f);
             Application.Run(f);
@@ -86,6 +90,25 @@ namespace PrimaProvaProgetto
                 "",
                 true));
             return res;
+        }
+
+        private static void SetDefaultLayout()
+        {
+            Dictionary<String, Tavolo> tavoli = new Dictionary<string, Tavolo>();
+
+            tavoli.Add("55", new Tavolo(6, StatoTavolo.Libero));
+
+            try
+            {
+                using (StreamWriter w = new StreamWriter("default.json"))
+                {
+                    string json = JsonConvert.SerializeObject(tavoli);
+                    w.Write(json);
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }

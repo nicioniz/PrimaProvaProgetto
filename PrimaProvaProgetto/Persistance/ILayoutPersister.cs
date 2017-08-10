@@ -9,12 +9,12 @@ namespace PrimaProvaProgetto.Model
 {
     interface ILayoutSaver
     {
-        void Save(List<Tavolo> layout);
+        void Save(Dictionary<String,Tavolo> layout);
     }
 
     interface ILayoutLoader
     {
-        List<Tavolo>  Load(TipoLayout tipo);
+        Dictionary<String, Tavolo>  Load(TipoLayout tipo);
     }
 
     public enum TipoLayout
