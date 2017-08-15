@@ -84,8 +84,7 @@ namespace PrimaProvaProgetto.Model
             */
             Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto).Values.ToList();
             Allergeni = LoadAllergeni();
-            //possiamo mettere il caricamento da file
-            
+
             ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
             Application.ApplicationExit += Application_ApplicationExit;
         }

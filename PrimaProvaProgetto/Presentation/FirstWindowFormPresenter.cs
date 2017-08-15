@@ -45,6 +45,7 @@ namespace PrimaProvaProgetto.Presentation
                 //si dovrà lanciare la vista col presenter del totem clienti
                 ClientiForm cf = new ClientiForm();
                 new ClientiFormSelezioneMenuPresenter(cf);
+                new ClientiFormTempiAttesaPresenter(cf);
                 cf.Show();
 
                 //e la vista col presenter per il totem del cameriere

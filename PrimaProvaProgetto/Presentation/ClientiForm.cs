@@ -39,11 +39,13 @@ namespace PrimaProvaProgetto.Presentation
             MenuDataGridView.ShowCellToolTips = true;
             MenuDataGridView.CellToolTipTextNeeded += MenuDataGridView_CellToolTipTextNeeded;
 
-            PanelAttesaPers1.BackColor = Color.LightGreen;
-            LabelAttesaPers1.Text = "12 minuti";
+            //PanelAttesaPers1.BackColor = Color.LightGreen;
+            //LabelAttesaPers1.Text = "12 minuti";
 
-            PanelAttesaPers3.BackColor = Color.Orange;
-            LabelAttesaPers3.Text = "1 ora e 12 minuti";
+            //PanelAttesaPers3.BackColor = Color.Orange;
+            //LabelAttesaPers3.Text = "1 ora e 12 minuti";
+
+            Control.CheckForIllegalCrossThreadCalls = false;
 
         }
 

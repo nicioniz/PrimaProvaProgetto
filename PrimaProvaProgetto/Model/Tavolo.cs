@@ -36,7 +36,7 @@ namespace PrimaProvaProgetto.Model
         public int Coperti
         {
             get { return _coperti; }
-            set { if (Stato.Equals(StatoTavolo.Occupato) && value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value;}
+            set { if (Stato.Equals(StatoTavolo.Occupato) && value <= 0) throw new ArgumentException("Invalid seats number"); _coperti = value; _calcolaTempo = new CalcolaTempo(value); }
         }
 
         [Editabile(Modifier = typeof(IntModifier))]

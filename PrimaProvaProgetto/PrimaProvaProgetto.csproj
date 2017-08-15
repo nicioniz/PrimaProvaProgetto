@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="Presentation\FirstWindowFormPresenter.cs" />
     <Compile Include="Presentation\IModifierControl.cs" />
+    <Compile Include="Presentation\InserimentoPrenotazioneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\InserimentoPrenotazioneForm.Designer.cs">
+      <DependentUpon>InserimentoPrenotazioneForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\IntModifier.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\InserimentoPrenotazioneForm.resx">
+      <DependentUpon>InserimentoPrenotazioneForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\LayoutForm.resx">
       <DependentUpon>LayoutForm.cs</DependentUpon>

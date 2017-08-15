@@ -36,7 +36,7 @@ namespace PrimaProvaProgetto.Presentation
 
         private void AggiungiPrenotazioneButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            new InserimentoPrenotazioneForm().Show();
         }
 
         public ClientiForm Target
@@ -58,11 +58,14 @@ namespace PrimaProvaProgetto.Presentation
         private void DrawSingoloTempo(int nroPersone)
         {
             TimeSpan tempo = GetTempoAttesaMinimo(nroPersone);
+            
             Label tempoAttesa = (Label)Target.GetType().GetProperty("LabelAttesaPers" + nroPersone).GetGetMethod().Invoke(Target, null);
             TableLayoutPanel panelAttesa = (TableLayoutPanel)Target.GetType().GetProperty("PanelAttesaPers" + nroPersone).GetGetMethod().Invoke(Target, null);
             tempoAttesa.Text = String.Format("{0:%h} or" + ((tempo.Hours > 1) ? ("e") : ("a")) + " e {0:%m} minuti", tempo);
-            panelAttesa.BackColor = (tempo < sogliaTempoBreve) ? (Color.LightGreen) : (Color.Orange);
-
+            if (tempo == TimeSpan.Zero)
+                tempoAttesa.Text = "LIBERO";
+            panelAttesa.BackColor = GetTempoAttesaColor(tempo);
+            
         }
 
         private TimeSpan GetTempoAttesaMinimo(int nroPersone)
@@ -71,10 +74,17 @@ namespace PrimaProvaProgetto.Presentation
             Ristorante.GetInstance().Tavoli.Where(t => t.Coperti >= nroPersone && t.Coperti <= (nroPersone + 1)).ToList()
                 .ForEach(t => tempi.Add(t.CalcolaTempo.TempoRimanente));
             tempi.Sort();
+            if (tempi.Count == 0)
+                return TimeSpan.Zero;
             int index = 0;
             Ristorante.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
-                .ForEach(p => tempi[index++ % tempi.Count] = tempi[index++ % tempi.Count] + Previsione.GetInstance().OttieniPrevisione(nroPersone));
+                .ForEach(p => tempi[index % tempi.Count] = tempi[index++ % tempi.Count] + Previsione.GetInstance().OttieniPrevisione(nroPersone));
             return tempi.Min();
+        }
+
+        private Color GetTempoAttesaColor(TimeSpan tempoAttesa)
+        {
+            return (tempoAttesa < sogliaTempoBreve) ? (Color.LightGreen) : (Color.Orange);
         }
     }
 }
