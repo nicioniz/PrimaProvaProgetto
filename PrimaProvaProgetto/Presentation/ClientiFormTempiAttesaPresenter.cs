@@ -61,9 +61,7 @@ namespace PrimaProvaProgetto.Presentation
             
             Label tempoAttesa = (Label)Target.GetType().GetProperty("LabelAttesaPers" + nroPersone).GetGetMethod().Invoke(Target, null);
             TableLayoutPanel panelAttesa = (TableLayoutPanel)Target.GetType().GetProperty("PanelAttesaPers" + nroPersone).GetGetMethod().Invoke(Target, null);
-            tempoAttesa.Text = String.Format("{0:%h} or" + ((tempo.Hours > 1) ? ("e") : ("a")) + " e {0:%m} minuti", tempo);
-            if (tempo == TimeSpan.Zero)
-                tempoAttesa.Text = "LIBERO";
+            tempoAttesa.Text = GetTempoString(tempo);
             panelAttesa.BackColor = GetTempoAttesaColor(tempo);
             
         }
@@ -71,20 +69,28 @@ namespace PrimaProvaProgetto.Presentation
         private TimeSpan GetTempoAttesaMinimo(int nroPersone)
         {
             List<TimeSpan> tempi = new List<TimeSpan>();
-            Ristorante.GetInstance().Tavoli.Where(t => t.Coperti >= nroPersone && t.Coperti <= (nroPersone + 1)).ToList()
+            Ristorante.GetInstance().Tavoli.Where(t => t.PostiMax >= nroPersone && t.PostiMax <= (nroPersone + 1)).ToList()
                 .ForEach(t => tempi.Add(t.CalcolaTempo.TempoRimanente));
             tempi.Sort();
-            if (tempi.Count == 0)
-                return TimeSpan.Zero;
             int index = 0;
             Ristorante.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
                 .ForEach(p => tempi[index % tempi.Count] = tempi[index++ % tempi.Count] + Previsione.GetInstance().OttieniPrevisione(nroPersone));
-            return tempi.Min();
+            return tempi.Count!= 0 ? tempi.Min() : TimeSpan.Zero;
         }
 
         private Color GetTempoAttesaColor(TimeSpan tempoAttesa)
         {
             return (tempoAttesa < sogliaTempoBreve) ? (Color.LightGreen) : (Color.Orange);
+        }
+
+        private string GetTempoString(TimeSpan tempo)
+        {
+            if (tempo == TimeSpan.Zero)
+                return "LIBERO";
+            string res = "";
+            if(tempo.Hours != 0)
+                res = String.Format("{0:%h} or" + ((tempo.Hours > 1) ? ("e") : ("a")) + " e ", tempo);
+            return res + String.Format("{0:%m} minuti", tempo);
         }
     }
 }

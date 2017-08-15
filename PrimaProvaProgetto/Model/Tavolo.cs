@@ -20,6 +20,7 @@ namespace PrimaProvaProgetto.Model
         {
             PostiMax = postiMax;
             Stato = stato;
+            CalcolaTempo = new CalcolaTempo(0);
         }
 
         // Forse si potrebbe anche togliere questo costruttore, visto che i coperti andranno settati
@@ -29,6 +30,7 @@ namespace PrimaProvaProgetto.Model
             Coperti = coperti;
             PostiMax = postiMax;
             Stato = stato;
+            CalcolaTempo = new CalcolaTempo(0);
         }
 
 

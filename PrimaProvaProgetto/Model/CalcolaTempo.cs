@@ -20,6 +20,8 @@ namespace PrimaProvaProgetto.Model
         {
             get
             {
+                if (_numeroPosti == 0)
+                    return TimeSpan.Zero;
                 TimeSpan tempoPrevisto = Previsione.GetInstance().OttieniPrevisione(_numeroPosti);
                 TimeSpan tempoRimanente = (_oraInizioPasto + tempoPrevisto) - DateTime.Now;
                 return tempoRimanente > TimeSpan.Zero ? tempoRimanente : TimeSpan.Zero;

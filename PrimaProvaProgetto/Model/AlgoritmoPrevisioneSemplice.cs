@@ -15,7 +15,7 @@ namespace PrimaProvaProgetto.Model
         {
             return new TimeSpan(Convert.ToInt64(
                 vecchiePermanenze
-                    .Where(tp => tp.NumeroCoperti <= numeroPersone && tp.NumeroCoperti >= (numeroPersone + 1))
+                    .Where(tp => tp.NumeroCoperti >= numeroPersone && tp.NumeroCoperti <= (numeroPersone + 1))
                     .Average(tp => tp.Tempo.Ticks)));
         }
 
