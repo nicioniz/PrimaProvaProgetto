@@ -14,7 +14,6 @@ namespace PrimaProvaProgetto.Presentation
     class ClientiFormTempiAttesaPresenter
     {
         private ClientiForm _target;
-        private TimeSpan sogliaTempoBreve = new TimeSpan(0, 16, 0);
 
         public ClientiFormTempiAttesaPresenter(ClientiForm target)
         {
@@ -72,15 +71,12 @@ namespace PrimaProvaProgetto.Presentation
             Ristorante.GetInstance().Tavoli.Where(t => t.PostiMax >= nroPersone && t.PostiMax <= (nroPersone + 1)).ToList()
                 .ForEach(t => tempi.Add(t.CalcolaTempo.TempoRimanente));
             tempi.Sort();
+            if (tempi.Count == 0)
+                return TimeSpan.Zero;
             int index = 0;
             Ristorante.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
                 .ForEach(p => tempi[index % tempi.Count] = tempi[index++ % tempi.Count] + Previsione.GetInstance().OttieniPrevisione(nroPersone));
-            return tempi.Count!= 0 ? tempi.Min() : TimeSpan.Zero;
-        }
-
-        private Color GetTempoAttesaColor(TimeSpan tempoAttesa)
-        {
-            return (tempoAttesa < sogliaTempoBreve) ? (Color.LightGreen) : (Color.Orange);
+            return tempi.Count != 0 ? tempi.Min() : TimeSpan.Zero;
         }
 
         private string GetTempoString(TimeSpan tempo)
@@ -92,5 +88,16 @@ namespace PrimaProvaProgetto.Presentation
                 res = String.Format("{0:%h} or" + ((tempo.Hours > 1) ? ("e") : ("a")) + " e ", tempo);
             return res + String.Format("{0:%m} minuti", tempo);
         }
+
+        private Color GetTempoAttesaColor(TimeSpan tempoAttesa)
+        {
+            Dictionary<TimeSpan, Color> dict = new Dictionary<TimeSpan, Color>();
+            dict.Add(new TimeSpan(0, 15, 0), Color.LightGreen);
+            dict.Add(new TimeSpan(0, 50, 0), Color.Orange);
+            dict.Add(TimeSpan.MaxValue, Color.Red);
+            TimeSpan res = dict.Keys.ToList().First(ts => tempoAttesa <= ts);
+            return dict[res];
+        }
+
     }
 }
