@@ -41,9 +41,10 @@
             // 
             // _buttonOK
             // 
-            this._buttonOK.Location = new System.Drawing.Point(134, 147);
+            this._buttonOK.Location = new System.Drawing.Point(89, 96);
+            this._buttonOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._buttonOK.Name = "_buttonOK";
-            this._buttonOK.Size = new System.Drawing.Size(75, 30);
+            this._buttonOK.Size = new System.Drawing.Size(50, 19);
             this._buttonOK.TabIndex = 0;
             this._buttonOK.Text = "&OK";
             this._buttonOK.UseVisualStyleBackColor = true;
@@ -52,33 +53,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 23);
+            this.label1.Location = new System.Drawing.Point(67, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // _textBoxNome
             // 
-            this._textBoxNome.Location = new System.Drawing.Point(158, 20);
+            this._textBoxNome.Location = new System.Drawing.Point(105, 13);
+            this._textBoxNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._textBoxNome.Name = "_textBoxNome";
-            this._textBoxNome.Size = new System.Drawing.Size(142, 26);
+            this._textBoxNome.Size = new System.Drawing.Size(96, 20);
             this._textBoxNome.TabIndex = 2;
             // 
             // _textBoxNumeroTel
             // 
-            this._textBoxNumeroTel.Location = new System.Drawing.Point(158, 52);
+            this._textBoxNumeroTel.Location = new System.Drawing.Point(105, 34);
+            this._textBoxNumeroTel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._textBoxNumeroTel.Name = "_textBoxNumeroTel";
-            this._textBoxNumeroTel.Size = new System.Drawing.Size(142, 26);
+            this._textBoxNumeroTel.Size = new System.Drawing.Size(96, 20);
             this._textBoxNumeroTel.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 55);
+            this.label2.Location = new System.Drawing.Point(17, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
+            this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Numero telefono";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -86,27 +91,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 86);
+            this.label3.Location = new System.Drawing.Point(33, 56);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Numero posti";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // _numericUpDownNumeroPosti
             // 
-            this._numericUpDownNumeroPosti.Location = new System.Drawing.Point(158, 84);
+            this._numericUpDownNumeroPosti.Location = new System.Drawing.Point(105, 55);
+            this._numericUpDownNumeroPosti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._numericUpDownNumeroPosti.Name = "_numericUpDownNumeroPosti";
-            this._numericUpDownNumeroPosti.Size = new System.Drawing.Size(142, 26);
+            this._numericUpDownNumeroPosti.Size = new System.Drawing.Size(95, 20);
             this._numericUpDownNumeroPosti.TabIndex = 6;
             this._numericUpDownNumeroPosti.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // _buttonAnnulla
             // 
             this._buttonAnnulla.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonAnnulla.Location = new System.Drawing.Point(225, 147);
+            this._buttonAnnulla.Location = new System.Drawing.Point(150, 96);
+            this._buttonAnnulla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._buttonAnnulla.Name = "_buttonAnnulla";
-            this._buttonAnnulla.Size = new System.Drawing.Size(75, 30);
+            this._buttonAnnulla.Size = new System.Drawing.Size(50, 19);
             this._buttonAnnulla.TabIndex = 7;
             this._buttonAnnulla.Text = "&Annulla";
             this._buttonAnnulla.UseVisualStyleBackColor = true;
@@ -115,10 +123,10 @@
             // InserimentoPrenotazioneForm
             // 
             this.AcceptButton = this._buttonOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonAnnulla;
-            this.ClientSize = new System.Drawing.Size(332, 204);
+            this.ClientSize = new System.Drawing.Size(221, 133);
             this.Controls.Add(this._buttonAnnulla);
             this.Controls.Add(this._numericUpDownNumeroPosti);
             this.Controls.Add(this.label3);
@@ -127,6 +135,7 @@
             this.Controls.Add(this._textBoxNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._buttonOK);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InserimentoPrenotazioneForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserimento Prenotazione";

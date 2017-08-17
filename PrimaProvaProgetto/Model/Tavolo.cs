@@ -16,12 +16,7 @@ namespace PrimaProvaProgetto.Model
         private StatoTavolo _stato;
 
         [JsonConstructor]
-        public Tavolo(int postiMax, StatoTavolo stato)
-        {
-            PostiMax = postiMax;
-            Stato = stato;
-            CalcolaTempo = new CalcolaTempo(0);
-        }
+        public Tavolo(int postiMax, StatoTavolo stato) : this(0, postiMax, stato) { }
 
         // Forse si potrebbe anche togliere questo costruttore, visto che i coperti andranno settati
         // nel momento in cui i clienti si accomodano
@@ -30,7 +25,6 @@ namespace PrimaProvaProgetto.Model
             Coperti = coperti;
             PostiMax = postiMax;
             Stato = stato;
-            CalcolaTempo = new CalcolaTempo(0);
         }
 
 

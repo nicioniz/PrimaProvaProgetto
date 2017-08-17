@@ -33,7 +33,6 @@ namespace PrimaProvaProgetto.Presentation
 
         private void Carica(Dictionary<String, Tavolo> tavoli)
         {
-            Ristorante ristorante = Ristorante.GetInstance();
             IEnumerable<PictureBox> layoutBox = Target.TableLayoutPanel2.Controls.OfType<PictureBox>();
 
             Tavolo tavolo;
@@ -57,7 +56,6 @@ namespace PrimaProvaProgetto.Presentation
                     pb.Image = null;
                 }
             }
-            ristorante.Tavoli = tavoli.Values.ToList();
         }
 
         private void IndietroButton_onClick(object sender, EventArgs e)
