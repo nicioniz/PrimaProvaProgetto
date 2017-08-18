@@ -14,6 +14,7 @@ namespace PrimaProvaProgetto.Model
         private int _coperti;
         private int _postiMax;
         private StatoTavolo _stato;
+        private static int _numeroTavolo;
 
         [JsonConstructor]
         public Tavolo(int postiMax, StatoTavolo stato) : this(0, postiMax, stato) { }
@@ -25,6 +26,7 @@ namespace PrimaProvaProgetto.Model
             Coperti = coperti;
             PostiMax = postiMax;
             Stato = stato;
+            Numero = 0;
         }
 
 
@@ -52,6 +54,17 @@ namespace PrimaProvaProgetto.Model
         {
             get { return _stato; }
             set { _stato = value;}
+        }
+
+        public int Numero
+        {
+            get { return _numeroTavolo; }
+            set { _numeroTavolo = value; }
+        }
+
+        public override string ToString()
+        {
+            return "Tavolo N° "+Numero+" - Stato: " + Stato;
         }
     }
 }

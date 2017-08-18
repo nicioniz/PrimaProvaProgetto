@@ -21,9 +21,9 @@ namespace PrimaProvaProgetto.Presentation
             _numericUpDownNumeroPosti.Minimum = 1;
             List<Tavolo> tavoli = Ristorante.GetInstance().Tavoli;
             int maxPosti = 2;
-            foreach(Tavolo t in tavoli)
+            foreach (Tavolo t in tavoli)
             {
-                if(t.PostiMax > maxPosti)
+                if (t.PostiMax > maxPosti)
                 {
                     maxPosti = t.PostiMax;
                 }
@@ -57,7 +57,7 @@ namespace PrimaProvaProgetto.Presentation
 
         private Boolean telefonoValido(String telefono)
         {
-            for(int i = 0; i < telefono.Length; i++)
+            for (int i = 0; i < telefono.Length; i++)
             {
                 if (i == 0)
                 {
@@ -66,7 +66,7 @@ namespace PrimaProvaProgetto.Presentation
                 }
                 else
                     if (!Char.IsDigit(telefono[i]))
-                        return false;
+                    return false;
             }
             return true;
         }
@@ -74,6 +74,19 @@ namespace PrimaProvaProgetto.Presentation
         private void _buttonAnnulla_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public TextBox GetNomeBox
+        {
+            get { return _textBoxNome; }
+        }
+        public TextBox GetTelefonoBox
+        {
+            get { return _textBoxNumeroTel; }
+        }
+        public NumericUpDown GetCopertiBox
+        {
+            get { return _numericUpDownNumeroPosti; }
         }
     }
 }

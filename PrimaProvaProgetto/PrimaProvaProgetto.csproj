@@ -79,6 +79,13 @@
     <Compile Include="Presentation\AllergeniModifier.Designer.cs">
       <DependentUpon>AllergeniModifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\CaposalaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CaposalaForm.Designer.cs">
+      <DependentUpon>CaposalaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\CaposalaFormPresenter.cs" />
     <Compile Include="Presentation\CategoriaModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="Presentation\AllergeniModifier.resx">
       <DependentUpon>AllergeniModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CaposalaForm.resx">
+      <DependentUpon>CaposalaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>

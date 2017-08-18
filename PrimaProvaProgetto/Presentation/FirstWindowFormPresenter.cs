@@ -48,8 +48,12 @@ namespace PrimaProvaProgetto.Presentation
                 new ClientiFormTempiAttesaPresenter(cf);
                 cf.Show();
 
+
+
                 //e la vista col presenter per il totem del cameriere
-                // TODO
+                CaposalaForm cpf = new CaposalaForm();
+                new CaposalaFormPresenter(cpf);
+                cpf.Show();
             }
         }
 
