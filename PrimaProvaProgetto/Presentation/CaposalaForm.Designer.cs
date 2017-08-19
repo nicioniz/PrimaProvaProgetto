@@ -74,7 +74,7 @@
             // 
             // _prenotazioniPanel
             // 
-            this._prenotazioniPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._prenotazioniPanel.BackColor = System.Drawing.Color.DarkOrange;
             this._prenotazioniPanel.Controls.Add(this.label1);
             this._prenotazioniPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._prenotazioniPanel.Location = new System.Drawing.Point(5, 5);
@@ -87,16 +87,17 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 4);
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 55);
+            this.label1.Size = new System.Drawing.Size(343, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "Prenotazioni";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _tavoliPanel
             // 
-            this._tavoliPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this._tavoliPanel.BackColor = System.Drawing.Color.Gold;
             this._tavoliPanel.Controls.Add(this.label2);
             this._tavoliPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tavoliPanel.Location = new System.Drawing.Point(456, 5);
@@ -109,12 +110,13 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 4);
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(67, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 55);
+            this.label2.Size = new System.Drawing.Size(328, 56);
             this.label2.TabIndex = 0;
             this.label2.Text = "Stato Tavoli";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _prenotazioniListView
             // 
@@ -128,6 +130,7 @@
             this._prenotazioniListView.UseCompatibleStateImageBehavior = false;
             this._prenotazioniListView.View = System.Windows.Forms.View.List;
             this._prenotazioniListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this._prenotazioniListView_MouseClick);
+            this._prenotazioniListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this._prenotazioniListView_MouseDown);
             // 
             // _tavoliListView
             // 
@@ -147,7 +150,7 @@
             this.occupaTavoloToolStripMenuItem,
             this.liberaTavoloToolStripMenuItem});
             this._tavoliContextMenuStrip.Name = "contextMenuStrip1";
-            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(154, 48);
+            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(154, 70);
             this._tavoliContextMenuStrip.Text = "Menù";
             // 
             // occupaTavoloToolStripMenuItem
@@ -155,12 +158,14 @@
             this.occupaTavoloToolStripMenuItem.Name = "occupaTavoloToolStripMenuItem";
             this.occupaTavoloToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.occupaTavoloToolStripMenuItem.Text = "Occupa Tavolo";
+            this.occupaTavoloToolStripMenuItem.Click += new System.EventHandler(this.occupaTavoloToolStripMenuItem_Click);
             // 
             // liberaTavoloToolStripMenuItem
             // 
             this.liberaTavoloToolStripMenuItem.Name = "liberaTavoloToolStripMenuItem";
             this.liberaTavoloToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.liberaTavoloToolStripMenuItem.Text = "Libera Tavolo";
+            this.liberaTavoloToolStripMenuItem.Click += new System.EventHandler(this.occupaTavoloToolStripMenuItem_Click);
             // 
             // _prenotazioniContextMenuStrip
             // 
@@ -168,7 +173,7 @@
             this.modificaPrenotazioneToolStripMenuItem,
             this.eliminaPrenotazioneToolStripMenuItem});
             this._prenotazioniContextMenuStrip.Name = "_prenotazioniContextMenuStrip";
-            this._prenotazioniContextMenuStrip.Size = new System.Drawing.Size(194, 70);
+            this._prenotazioniContextMenuStrip.Size = new System.Drawing.Size(194, 48);
             // 
             // modificaPrenotazioneToolStripMenuItem
             // 
@@ -196,6 +201,7 @@
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Name = "inserisciNuovaPrenotazioneToolStripMenuItem";
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Text = "Inserisci Nuova Prenotazione";
+            this.inserisciNuovaPrenotazioneToolStripMenuItem.Click += new System.EventHandler(this.inserisciNuovaPrenotazioneToolStripMenuItem_Click);
             // 
             // CaposalaForm
             // 

@@ -10,6 +10,7 @@ namespace PrimaProvaProgetto.Model
 {
     public class Tavolo
     {
+        public event EventHandler StatoChanged;
         private CalcolaTempo _calcolaTempo;
         private int _coperti;
         private int _postiMax;
@@ -27,8 +28,16 @@ namespace PrimaProvaProgetto.Model
             PostiMax = postiMax;
             Stato = stato;
             Numero = 0;
+            
         }
 
+        protected virtual void onStatoChanged()
+        {
+            if(StatoChanged != null)
+            {
+                StatoChanged(this, EventArgs.Empty);
+            }
+        }
 
         [Editabile(Modifier = typeof(IntModifier))]
         public int Coperti
@@ -53,7 +62,9 @@ namespace PrimaProvaProgetto.Model
         public StatoTavolo Stato
         {
             get { return _stato; }
-            set { _stato = value;}
+            set { _stato = value;
+                onStatoChanged();
+            }
         }
 
         public int Numero
@@ -64,8 +75,11 @@ namespace PrimaProvaProgetto.Model
 
         public override string ToString()
         {
-            return "Tavolo N° "+Numero+" - Stato: " + Stato;
+            return "Tavolo N° "+Numero+ " - Posti: "+PostiMax+" - Stato: " + Stato;
         }
+
+        
+
     }
 }
 

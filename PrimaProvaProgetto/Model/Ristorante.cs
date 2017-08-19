@@ -77,12 +77,14 @@ namespace PrimaProvaProgetto.Model
         {
             Menu = MenuPersisterFactory.GetMenuLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
+
             /* 
             * Per ora al Ristorante ho lasciato una lista di soli tavoli, non so se possa servire un altro sistema
             * magari la Form dei camerieri avrà anch'essa bisogno delle coordinate dei tavoli,
             * ma mettere tali informazioni qui forse mescola dati con grafica
             */
             Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto).Values.ToList();
+            
             Allergeni = LoadAllergeni();
 
             ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
