@@ -53,6 +53,15 @@ namespace PrimaProvaProgetto.Presentation
 
         private void buttonIndietro_Click(object sender, EventArgs e)
         {
+            if(Ristorante.GetInstance().Menu.Where(p => p.Disponibile == true).ToList().Count == 0)
+            {
+                MessageBox.Show(
+                "Il menu non contiene pietanze disponibili, non sarà possibile avviare il totem clienti",
+                "Nessuna Pietanza",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+
             Target.Close();
         }
 

@@ -92,6 +92,15 @@ namespace PrimaProvaProgetto.Presentation
                 ristorante.Tavoli = tavoli.Values.ToList();
                 LayoutPersisterFactory.GetLayoutSaver("SimpleJsonLayoutSaver").Save(tavoli);
 
+                if(tavoli.Count == 0)
+                {
+                    MessageBox.Show(
+                        "Il layout non contiene tavoli, non sarà possibile avviare il totem clienti", 
+                        "Nessun Tavolo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+
                 Target.Close();
             }
         }
