@@ -92,7 +92,7 @@ namespace PrimaProvaProgetto.Presentation
                 ristorante.Tavoli = tavoli.Values.ToList();
                 
                 LayoutPersisterFactory.GetLayoutSaver("SimpleJsonLayoutSaver").Save(tavoli);
-                
+
                 Target.Close();
             }
         }
