@@ -35,7 +35,11 @@ namespace PrimaProvaProgetto.Model
 
             res.Add(new TempoPermanenza(3,
                 new DateTime(2017, 7, 1, 19, 10, 0),
-                new DateTime(2017, 7, 1, 20, 00, 0)));
+                new DateTime(2017, 7, 1, 20, 0, 0)));
+
+            res.Add(new TempoPermanenza(5,
+                new DateTime(2017, 7, 1, 19, 10, 0),
+                new DateTime(2017, 7, 1, 20, 30, 0)));
 
             res.Add(new TempoPermanenza(1,
                 new DateTime(2017, 7, 1, 19, 15, 0),
@@ -48,6 +52,10 @@ namespace PrimaProvaProgetto.Model
             res.Add(new TempoPermanenza(6,
                 new DateTime(2017, 7, 1, 21, 0, 0),
                 new DateTime(2017, 7, 1, 22, 35, 0)));
+
+            res.Add(new TempoPermanenza(8,
+                new DateTime(2017, 7, 1, 21, 0, 0),
+                new DateTime(2017, 7, 1, 23, 0, 0)));
 
             return res;
         }

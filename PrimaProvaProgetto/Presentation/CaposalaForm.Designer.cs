@@ -150,7 +150,7 @@
             this.occupaTavoloToolStripMenuItem,
             this.liberaTavoloToolStripMenuItem});
             this._tavoliContextMenuStrip.Name = "contextMenuStrip1";
-            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(154, 70);
+            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(154, 48);
             this._tavoliContextMenuStrip.Text = "Menù";
             // 
             // occupaTavoloToolStripMenuItem
@@ -209,8 +209,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 631);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Location = new System.Drawing.Point(600, 75);
+            this.Location = new System.Drawing.Point(800, 100);
             this.Name = "CaposalaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CaposalaForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this._prenotazioniPanel.ResumeLayout(false);
