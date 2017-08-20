@@ -28,15 +28,11 @@ namespace PrimaProvaProgetto.Model
             PostiMax = postiMax;
             Stato = stato;
             Numero = 0;
-            
         }
 
         protected virtual void onStatoChanged()
         {
-            if(StatoChanged != null)
-            {
-                StatoChanged(this, EventArgs.Empty);
-            }
+            StatoChanged?.Invoke(this, EventArgs.Empty);
         }
 
         [Editabile(Modifier = typeof(IntModifier))]

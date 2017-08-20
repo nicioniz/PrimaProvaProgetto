@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Collections.Specialized;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
 
 namespace PrimaProvaProgetto.Presentation
 {
     class CaposalaFormPresenter
     {
         private CaposalaForm _target;
-
-
+        private Ristorante _ristorante;
         /*
          * NOTE:
          * Ci sono alcune ripetizioni di codice, al momento non sono riuscito a trovare una soluzione migliore
@@ -24,28 +24,22 @@ namespace PrimaProvaProgetto.Presentation
          * compare il menu di inserimento nuova prenotazione, cliccando su una voce della lista invece quello di modifica/elimina.
          * 
          * La grafica dei tavoli funziona ma per ora è scollegata dallo scheduling delle prenotazioni ai tavoli e aggiornamento 
-         * della lista
-         * 
+         * della lista 
          */
         public CaposalaFormPresenter(CaposalaForm target)
         {
             _target = target;
-            Ristorante.GetInstance().ListaPrenotazioni.CollectionChanged += RefreshPrenotazioni;
+            _ristorante = Ristorante.GetInstance();
+            _ristorante.ListaPrenotazioni.CollectionChanged += RefreshPrenotazioni;
 
-            foreach (Tavolo t in Ristorante.GetInstance().Tavoli)
+            foreach (Tavolo t in _ristorante.Tavoli)
             {
                 t.StatoChanged += RefreshTavoli;
             }
 
-            foreach (Tavolo t in Ristorante.GetInstance().Tavoli)
-            {
-                t.Numero = Ristorante.GetInstance().Tavoli.IndexOf(t) + 1;
-                ListViewItem lv = new ListViewItem();
-                lv.ForeColor = (t.Stato.Equals(StatoTavolo.Occupato)) ? System.Drawing.Color.Red : System.Drawing.Color.Green;
-                lv.Text = t.ToString();
-                lv.Tag = t;
-                _target.GetListTavoli.Items.Add(lv);
-            } 
+            //Se per errore si chiude la finestra alla riapertura si hanno le prenotazioni di prima, idem per i tavoli
+            RefreshPrenotazioni(this, EventArgs.Empty);
+            RefreshTavoli(this, EventArgs.Empty);
         }
 
         private void RefreshTavoli(object sender, EventArgs e)
@@ -60,10 +54,9 @@ namespace PrimaProvaProgetto.Presentation
                 }
             }
 
-            foreach (Tavolo t in Ristorante.GetInstance().Tavoli)
+            foreach (Tavolo t in _ristorante.Tavoli)
             {
-                t.Numero = Ristorante.GetInstance().Tavoli.IndexOf(t) + 1;
-
+                t.Numero = _ristorante.Tavoli.IndexOf(t) + 1;
                 ListViewItem lv = new ListViewItem();
                 lv.ForeColor = (t.Stato.Equals(StatoTavolo.Occupato)) ? System.Drawing.Color.Red : System.Drawing.Color.Green;
                 lv.Tag = t;
@@ -72,7 +65,7 @@ namespace PrimaProvaProgetto.Presentation
             }
         }
 
-        private void RefreshPrenotazioni(object sender, NotifyCollectionChangedEventArgs e)
+        private void RefreshPrenotazioni(object sender, EventArgs e)
         {
             //prima soluzione di refresh, un po' barbara ma fa il suo dovere
             ListView.ListViewItemCollection lista = _target.GetListView.Items;
@@ -81,7 +74,7 @@ namespace PrimaProvaProgetto.Presentation
                 foreach (ListViewItem i in lista)
                     lista.Remove(i);
             }
-            foreach (Prenotazione p in Ristorante.GetInstance().ListaPrenotazioni)
+            foreach (Prenotazione p in _ristorante.ListaPrenotazioni)
             {
                 ListViewItem lv = new ListViewItem();
                 lv.Tag = p;

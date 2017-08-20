@@ -165,7 +165,7 @@
             this.liberaTavoloToolStripMenuItem.Name = "liberaTavoloToolStripMenuItem";
             this.liberaTavoloToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.liberaTavoloToolStripMenuItem.Text = "Libera Tavolo";
-            this.liberaTavoloToolStripMenuItem.Click += new System.EventHandler(this.occupaTavoloToolStripMenuItem_Click);
+            this.liberaTavoloToolStripMenuItem.Click += new System.EventHandler(this.liberaTavoloToolStripMenuItem_Click);
             // 
             // _prenotazioniContextMenuStrip
             // 

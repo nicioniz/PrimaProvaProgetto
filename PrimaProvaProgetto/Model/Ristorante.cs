@@ -12,11 +12,11 @@ namespace PrimaProvaProgetto.Model
 {
     public class Ristorante
     {
+  
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;
         private List<Allergene> _allergeni;
         private List<Tavolo> _tavoli;
-
         private static Ristorante _instance = null;
 
         public List<Pietanza> Menu

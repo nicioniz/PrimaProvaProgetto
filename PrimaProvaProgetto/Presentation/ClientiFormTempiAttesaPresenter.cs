@@ -71,7 +71,7 @@ namespace PrimaProvaProgetto.Presentation
             Ristorante.GetInstance().Tavoli.Where(t => t.PostiMax >= nroPersone && t.PostiMax <= (nroPersone + 1)).ToList()
                 .ForEach(t => tempi.Add(t.CalcolaTempo.TempoRimanente));
             tempi.Sort();
-            if (tempi.Count == 0)
+            if (tempi.Count == 0 || localeVuoto())
                 return TimeSpan.Zero;
             int index = 0;
             Ristorante.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
@@ -81,7 +81,7 @@ namespace PrimaProvaProgetto.Presentation
 
         private string GetTempoString(TimeSpan tempo)
         {
-            if (tempo == TimeSpan.Zero)
+            if (tempo == TimeSpan.Zero || localeVuoto())
                 return "LIBERO";
             string res = "";
             if(tempo.Hours != 0)
@@ -97,6 +97,11 @@ namespace PrimaProvaProgetto.Presentation
             dict.Add(TimeSpan.MaxValue, Color.Red);
             TimeSpan res = dict.Keys.ToList().First(ts => tempoAttesa <= ts);
             return dict[res];
+        }
+
+        private bool localeVuoto()
+        {
+            return (Ristorante.GetInstance().ListaPrenotazioni.Count == 0) && (Ristorante.GetInstance().Tavoli.Where(t => t.Stato.Equals(StatoTavolo.Occupato)).Count() == 0);
         }
 
     }

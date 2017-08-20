@@ -59,7 +59,7 @@ namespace PrimaProvaProgetto.Presentation
         private void modificaPrenotazioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem t = (ToolStripMenuItem)sender;
-            ListViewItem lvi = (ListViewItem) t.GetCurrentParent().Tag;
+            ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
             Prenotazione p = (Prenotazione)lvi.Tag;
             ObservableCollection<Prenotazione> lista = Ristorante.GetInstance().ListaPrenotazioni;
             ModifierForm mf = new ModifierForm();
@@ -69,9 +69,9 @@ namespace PrimaProvaProgetto.Presentation
             mfp.SetEditableObject(p);
 
             if (mf.ShowDialog() == DialogResult.OK)
-            {    
-               lista.RemoveAt(index);
-               lista.Insert(index, p);  
+            {
+                lista.RemoveAt(index);
+                lista.Insert(index, p);
             }
         }
 
@@ -91,10 +91,28 @@ namespace PrimaProvaProgetto.Presentation
             ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
             Ristorante r = Ristorante.GetInstance();
             Tavolo tav = (Tavolo)lvi.Tag;
-            
+
             int index = lvi.ListView.Items.IndexOf(lvi);
 
-            r.Tavoli.ElementAt(index).Stato = (tav.Stato.Equals(StatoTavolo.Occupato)) ? StatoTavolo.Libero : StatoTavolo.Occupato;
+            Prenotazione first = (r.ListaPrenotazioni.Count != 0) ? r.ListaPrenotazioni.First() : null;
+            bool vuota = false;
+
+            if (first == null)
+            {
+                vuota = true;
+                MessageBox.Show("Nessuna voce nella lista prenotazioni");
+            }
+
+            if (!vuota && first.NumeroCoperti <= tav.PostiMax)
+            {
+                r.Tavoli.ElementAt(index).Stato = StatoTavolo.Occupato;
+                r.Tavoli.ElementAt(index).Numero = r.Tavoli.IndexOf(r.Tavoli.ElementAt(index)) + 1;
+                r.Tavoli.ElementAt(index).Coperti = first.NumeroCoperti;
+                r.Tavoli.ElementAt(index).CalcolaTempo.OccupaTavolo();
+                r.ListaPrenotazioni.Remove(first);
+
+                MessageBox.Show("Cliente " + first.ToString() + " al " + r.Tavoli.ElementAt(index));
+            }
         }
 
         private void _prenotazioniListView_MouseDown(object sender, MouseEventArgs e)
@@ -104,7 +122,6 @@ namespace PrimaProvaProgetto.Presentation
                 ListView lv = (ListView)sender;
                 if (lv.CheckedItems.Count == 0)
                 {
-                    Console.WriteLine(lv.CheckedItems.Count);
                     _insertPrenotazioneMenu.Show(Cursor.Position);
                 }
             }
@@ -113,6 +130,19 @@ namespace PrimaProvaProgetto.Presentation
         private void inserisciNuovaPrenotazioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new InserimentoPrenotazioneForm().Show();
+        }
+
+        private void liberaTavoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem t = (ToolStripMenuItem)sender;
+            ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
+            Ristorante r = Ristorante.GetInstance();
+            Tavolo tav = (Tavolo)lvi.Tag;
+
+            tav.CalcolaTempo.LiberaTavolo();
+            tav.Stato = StatoTavolo.Libero;
+            tav.Numero = r.Tavoli.IndexOf(tav) + 1;
+            MessageBox.Show(tav.ToString());
         }
     }
 }
