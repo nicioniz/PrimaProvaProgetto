@@ -19,6 +19,20 @@ namespace PrimaProvaProgetto.Presentation
         public CaposalaForm()
         {
             InitializeComponent();
+
+            Rectangle resolution = System.Windows.Forms.Screen.PrimaryScreen.Bounds;
+            if (resolution.Height < Size.Height || resolution.Width < Size.Width)
+            {
+               
+                //La dimenione la riduco ulteriormente per evitare che finisca sotto la barra inferiore
+                //(solitamente la gente ha la barra in basso, so che non è il massimo come soluzione)
+                Size = new Size(resolution.Width, resolution.Height - 50);
+
+            }
+
+            //NON permette il ridimensionamento
+            MaximumSize = Size;
+            MinimumSize = Size;
         }
 
         public ListView PrenotazioniListView
