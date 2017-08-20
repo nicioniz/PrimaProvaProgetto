@@ -22,14 +22,14 @@ namespace PrimaProvaProgetto.Presentation
             Target.ConfermaButton.Click += ConfermaButton_onClick;
             Target.CaricaComboBox.SelectedValueChanged += CaricaButton_onClick;
             Target.IndietroButton.Click += IndietroButton_onClick;
-            
+
             Carica(LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Ultimo));
         }
 
         private void CaricaButton_onClick(object sender, EventArgs e)
         {
             Carica(LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(((TipoLayout)((ComboBox)sender).SelectedItem)));
-            
+
         }
 
         private void Carica(Dictionary<String, Tavolo> tavoli)
@@ -78,20 +78,28 @@ namespace PrimaProvaProgetto.Presentation
                 Dictionary<String, Tavolo> tavoli = new Dictionary<string, Tavolo>();
 
                 IEnumerable<PictureBox> layoutBox = Target.TableLayoutPanel2.Controls.OfType<PictureBox>();
-                
-                foreach(PictureBox pb in layoutBox)
+
+                foreach (PictureBox pb in layoutBox)
                 {
-                    if(pb.Tag != null)
+                    if (pb.Tag != null)
                     {
                         String name = pb.Name;
                         // Ricavo le coordinate dal nome della PictureBox
                         String coordinate = name.Substring(name.Length - 2);
-                        tavoli.Add(coordinate, new Tavolo( int.Parse(pb.Tag.ToString()), StatoTavolo.Libero));
+                        tavoli.Add(coordinate, new Tavolo(int.Parse(pb.Tag.ToString()), StatoTavolo.Libero));
                     }
                 }
                 ristorante.Tavoli = tavoli.Values.ToList();
-                
+
                 LayoutPersisterFactory.GetLayoutSaver("SimpleJsonLayoutSaver").Save(tavoli);
+                if (tavoli.Count == 0)
+                {
+                    MessageBox.Show(
+                     "Il layout non contiene tavoli, non sarà possibile avviare il totem clienti",
+                     "Nessun Tavolo",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Warning);
+                 }
 
                 Target.Close();
             }
