@@ -166,7 +166,7 @@ namespace PrimaProvaProgetto.Presentation
 
             int index = lvi.ListView.Items.IndexOf(lvi);
 
-            Prenotazione first = (r.ListaPrenotazioni.Count != 0) ? r.ListaPrenotazioni.First() : null;
+            Prenotazione first = getPrenotazione();
             bool vuota = false;
 
             if (first == null)
@@ -185,6 +185,11 @@ namespace PrimaProvaProgetto.Presentation
 
                 MessageBox.Show("Cliente " + first.ToString() + " al " + r.Tavoli.ElementAt(index));
             }
+        }
+
+        private Prenotazione getPrenotazione()
+        {
+            return (Ristorante.GetInstance().ListaPrenotazioni.Count != 0) ? Ristorante.GetInstance().ListaPrenotazioni.First() : null;
         }
 
         private void _prenotazioniListView_MouseDown(object sender, MouseEventArgs e)

@@ -36,6 +36,8 @@ namespace PrimaProvaProgetto.Model
         public void LiberaTavolo()
         {
             Previsione.GetInstance().InserisciTempoPermanenza(new TempoPermanenza(_numeroPosti, _oraInizioPasto, DateTime.Now));
+            //porcata: così quando libero il tavolo alle richieste successive otterrò 0 come tempo
+            _numeroPosti = 0;
         }        
     }
 }
