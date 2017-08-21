@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PrimaProvaProgetto.Model.Ristorante">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAEAAEAAABAAAAAAAAAAEAABAIIAAAACAAQACAACAA=</HashCode>
+      <FileName>Model\Ristorante.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_allergeni" />
+      <Field Name="_listaPrenotazioni" />
+      <Field Name="_menu" />
+      <Field Name="_tavoli" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.Allergene">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Allergene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.Prenotazione">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAAAEAAAAAAAAAAAAAAEAAACAgAEAAAA=</HashCode>
+      <FileName>Model\Prenotazione.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.Pietanza">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEAAAAAIQAAAgAkBAAAAAAABAAAAAAAIAAQIAQACgA=</HashCode>
+      <FileName>Model\Pietanza.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_categoria" />
+      <Field Name="_prezzo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_allergeni" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.Tavolo">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAQAEAAAAAAB0ABAACAAAARAAAAAAAAAAAgABAAA=</HashCode>
+      <FileName>Model\Tavolo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_calcolaTempo" />
+      <Field Name="_stato" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.CalcolaTempo">
+    <Position X="4.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAIKA=</HashCode>
+      <FileName>Model\CalcolaTempo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="PrimaProvaProgetto.Model.Money">
+    <Position X="13.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAACAAAAAAEgAAAAAAAAAAAAIAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\Money.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="PrimaProvaProgetto.Model.Categoria">
+    <Position X="11.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAQAgAAACAAAAAAAAAAAAAEAABAAAAAAA=</HashCode>
+      <FileName>Model\Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PrimaProvaProgetto.Model.StatoTavolo">
+    <Position X="2.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Model\StatoTavolo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

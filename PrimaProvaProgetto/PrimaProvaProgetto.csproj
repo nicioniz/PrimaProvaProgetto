@@ -207,6 +207,8 @@
     <EmbeddedResource Include="Tests\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="RistoranteDiagram.cd" />
+    <None Include="CriteriDiSelezioneDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

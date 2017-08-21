@@ -54,6 +54,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -68,8 +69,8 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 862F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 971);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -81,7 +82,7 @@
             this._prenotazioniPanel.Location = new System.Drawing.Point(6, 7);
             this._prenotazioniPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._prenotazioniPanel.Name = "_prenotazioniPanel";
-            this._prenotazioniPanel.Size = new System.Drawing.Size(667, 93);
+            this._prenotazioniPanel.Size = new System.Drawing.Size(667, 125);
             this._prenotazioniPanel.TabIndex = 0;
             // 
             // label1
@@ -90,7 +91,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 5);
+            this.label1.Location = new System.Drawing.Point(83, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(513, 84);
@@ -106,7 +107,7 @@
             this._tavoliPanel.Location = new System.Drawing.Point(683, 7);
             this._tavoliPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._tavoliPanel.Name = "_tavoliPanel";
-            this._tavoliPanel.Size = new System.Drawing.Size(667, 93);
+            this._tavoliPanel.Size = new System.Drawing.Size(667, 125);
             this._tavoliPanel.TabIndex = 1;
             // 
             // label2
@@ -115,7 +116,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 5);
+            this.label2.Location = new System.Drawing.Point(98, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(490, 84);
@@ -127,28 +128,26 @@
             // 
             this._prenotazioniListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._prenotazioniListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._prenotazioniListView.Location = new System.Drawing.Point(6, 112);
+            this._prenotazioniListView.Location = new System.Drawing.Point(6, 144);
             this._prenotazioniListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._prenotazioniListView.Name = "_prenotazioniListView";
             this._prenotazioniListView.ShowItemToolTips = true;
-            this._prenotazioniListView.Size = new System.Drawing.Size(667, 852);
+            this._prenotazioniListView.Size = new System.Drawing.Size(667, 820);
             this._prenotazioniListView.TabIndex = 2;
             this._prenotazioniListView.UseCompatibleStateImageBehavior = false;
             this._prenotazioniListView.View = System.Windows.Forms.View.List;
-            
             // 
             // _tavoliListView
             // 
             this._tavoliListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tavoliListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._tavoliListView.Location = new System.Drawing.Point(683, 112);
+            this._tavoliListView.Location = new System.Drawing.Point(683, 144);
             this._tavoliListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._tavoliListView.Name = "_tavoliListView";
-            this._tavoliListView.Size = new System.Drawing.Size(667, 852);
+            this._tavoliListView.Size = new System.Drawing.Size(667, 820);
             this._tavoliListView.TabIndex = 3;
             this._tavoliListView.UseCompatibleStateImageBehavior = false;
             this._tavoliListView.View = System.Windows.Forms.View.List;
-            
             // 
             // _tavoliContextMenuStrip
             // 
@@ -157,7 +156,7 @@
             this.occupaTavoloToolStripMenuItem,
             this.liberaTavoloToolStripMenuItem});
             this._tavoliContextMenuStrip.Name = "contextMenuStrip1";
-            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(154, 70);
+            this._tavoliContextMenuStrip.Size = new System.Drawing.Size(201, 64);
             this._tavoliContextMenuStrip.Text = "Menù";
             // 
             // occupaTavoloToolStripMenuItem
@@ -165,14 +164,12 @@
             this.occupaTavoloToolStripMenuItem.Name = "occupaTavoloToolStripMenuItem";
             this.occupaTavoloToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.occupaTavoloToolStripMenuItem.Text = "Occupa Tavolo";
-            
             // 
             // liberaTavoloToolStripMenuItem
             // 
             this.liberaTavoloToolStripMenuItem.Name = "liberaTavoloToolStripMenuItem";
             this.liberaTavoloToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.liberaTavoloToolStripMenuItem.Text = "Libera Tavolo";
-            
             // 
             // _prenotazioniContextMenuStrip
             // 
@@ -188,14 +185,12 @@
             this.modificaPrenotazioneToolStripMenuItem.Name = "modificaPrenotazioneToolStripMenuItem";
             this.modificaPrenotazioneToolStripMenuItem.Size = new System.Drawing.Size(261, 30);
             this.modificaPrenotazioneToolStripMenuItem.Text = "Modifica Prenotazione";
-            
             // 
             // eliminaPrenotazioneToolStripMenuItem
             // 
             this.eliminaPrenotazioneToolStripMenuItem.Name = "eliminaPrenotazioneToolStripMenuItem";
             this.eliminaPrenotazioneToolStripMenuItem.Size = new System.Drawing.Size(261, 30);
             this.eliminaPrenotazioneToolStripMenuItem.Text = "Elimina Prenotazione";
-            
             // 
             // _insertPrenotazioneMenu
             // 
@@ -210,7 +205,6 @@
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Name = "inserisciNuovaPrenotazioneToolStripMenuItem";
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Text = "Inserisci Nuova Prenotazione";
-            
             // 
             // CaposalaForm
             // 
