@@ -172,7 +172,6 @@ namespace PrimaProvaProgetto.Presentation
             if (first == null)
             {
                 vuota = true;
-                MessageBox.Show("Nessuna voce nella lista prenotazioni");
             }
 
             if (!vuota && first.NumeroCoperti <= tav.PostiMax)
@@ -189,7 +188,18 @@ namespace PrimaProvaProgetto.Presentation
 
         private Prenotazione getPrenotazione()
         {
-            return (Ristorante.GetInstance().ListaPrenotazioni.Count != 0) ? Ristorante.GetInstance().ListaPrenotazioni.First() : null;
+            //return (Ristorante.GetInstance().ListaPrenotazioni.Count != 0) ? Ristorante.GetInstance().ListaPrenotazioni.First() : null;
+            if (Ristorante.GetInstance().ListaPrenotazioni.Count == 0)
+            {
+                MessageBox.Show("Nessuna voce nella lista prenotazioni");
+                return null;
+            }
+            if (_target.PrenotazioniListView.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("Seleziona una voce dalla lista di prenotazione");
+                return null;
+            }
+            return (Prenotazione)_target.PrenotazioniListView.SelectedItems[0].Tag;
         }
 
         private void _prenotazioniListView_MouseDown(object sender, MouseEventArgs e)

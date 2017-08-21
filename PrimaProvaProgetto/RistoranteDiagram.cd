@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="PrimaProvaProgetto.Model.Ristorante">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="10.25" Y="4.25" Width="3.5" />
     <TypeIdentifier>
       <HashCode>ICAEAAEAAABAAAAAAAAAAEAABAIIAAAACAAQACAACAA=</HashCode>
       <FileName>Model\Ristorante.cs</FileName>
@@ -14,21 +14,21 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="PrimaProvaProgetto.Model.Allergene">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="16.25" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAEAAAA=</HashCode>
       <FileName>Model\Allergene.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PrimaProvaProgetto.Model.Prenotazione">
-    <Position X="4.25" Y="3.5" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAQAAAEAAAAAAAAAAAAAAEAAACAgAEAAAA=</HashCode>
       <FileName>Model\Prenotazione.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PrimaProvaProgetto.Model.Pietanza">
-    <Position X="8" Y="1" Width="1.5" />
+    <Position X="17" Y="8.5" Width="3" />
     <TypeIdentifier>
       <HashCode>ABEAAAAAIQAAAgAkBAAAAAAABAAAAAAAIAAQIAQACgA=</HashCode>
       <FileName>Model\Pietanza.cs</FileName>
@@ -42,7 +42,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="PrimaProvaProgetto.Model.Tavolo">
-    <Position X="0.75" Y="6.25" Width="1.5" />
+    <Position X="5.5" Y="4" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAACAQAEAAAAAAB0ABAACAAAARAAAAAAAAAAAgABAAA=</HashCode>
       <FileName>Model\Tavolo.cs</FileName>
@@ -53,28 +53,55 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="PrimaProvaProgetto.Model.CalcolaTempo">
-    <Position X="4.25" Y="7.25" Width="1.5" />
+    <Position X="0.5" Y="4.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAIKA=</HashCode>
       <FileName>Model\CalcolaTempo.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PrimaProvaProgetto.Model.Previsione">
+    <Position X="13.75" Y="14.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAAAAAAAAAAAAAAAAADEAAAIAAAAAAAQAEAAg=</HashCode>
+      <FileName>Model\Previsione.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_algoritmo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_tempiPermanenza" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.TempoPermanenza">
+    <Position X="9.5" Y="14.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAQAAAAAAAAQAACEAAAAAAAAAAAgEAAAAA=</HashCode>
+      <FileName>Model\TempoPermanenza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="PrimaProvaProgetto.Model.Money">
-    <Position X="13.5" Y="1" Width="1.5" />
+    <Position X="13.25" Y="8.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>ABABAAAACAAAAAAEgAAAAAAAAAAAAIAAAAAgAAAAAAA=</HashCode>
       <FileName>Model\Money.cs</FileName>
     </TypeIdentifier>
   </Struct>
+  <Interface Name="PrimaProvaProgetto.Model.IAlgoritmoPrevisione">
+    <Position X="19.75" Y="14.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\IAlgoritmoPrevisione.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="PrimaProvaProgetto.Model.Categoria">
-    <Position X="11.5" Y="1" Width="1.5" />
+    <Position X="22" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAQAgAAACAAAAAAAAAAAAAEAABAAAAAAA=</HashCode>
       <FileName>Model\Categoria.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="PrimaProvaProgetto.Model.StatoTavolo">
-    <Position X="2.5" Y="9.25" Width="1.5" />
+    <Position X="7.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Model\StatoTavolo.cs</FileName>
