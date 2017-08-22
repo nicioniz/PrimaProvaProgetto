@@ -7,9 +7,9 @@
       <FileName>Model\Ristorante.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Field Name="_allergeni" />
-      <Field Name="_listaPrenotazioni" />
       <Field Name="_menu" />
+      <Field Name="_listaPrenotazioni" />
+      <Field Name="_allergeni" />
       <Field Name="_tavoli" />
     </ShowAsCollectionAssociation>
   </Class>
@@ -34,8 +34,8 @@
       <FileName>Model\Pietanza.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_categoria" />
       <Field Name="_prezzo" />
+      <Field Name="_categoria" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Field Name="_allergeni" />
@@ -59,25 +59,15 @@
       <FileName>Model\CalcolaTempo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PrimaProvaProgetto.Model.Previsione">
-    <Position X="13.75" Y="14.25" Width="4" />
+  <Class Name="PrimaProvaProgetto.Presentation.PietanzaControl">
+    <Position X="20.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAIAAAAAAAAAAAAAAAAADEAAAIAAAAAAAQAEAAg=</HashCode>
-      <FileName>Model\Previsione.cs</FileName>
+      <HashCode>AAFAAEAAACAAAgAACACBAAACAAAAQgAAEBEQAAAAAAA=</HashCode>
+      <FileName>Presentation\PietanzaControl.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_algoritmo" />
+      <Field Name="_pietanza" />
     </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Field Name="_tempiPermanenza" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="PrimaProvaProgetto.Model.TempoPermanenza">
-    <Position X="9.5" Y="14.25" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAQAAAAAAAAQAACEAAAAAAAAAAAgEAAAAA=</HashCode>
-      <FileName>Model\TempoPermanenza.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Struct Name="PrimaProvaProgetto.Model.Money">
     <Position X="13.25" Y="8.75" Width="2.5" />
@@ -86,15 +76,8 @@
       <FileName>Model\Money.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="PrimaProvaProgetto.Model.IAlgoritmoPrevisione">
-    <Position X="19.75" Y="14.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>Model\IAlgoritmoPrevisione.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Enum Name="PrimaProvaProgetto.Model.Categoria">
-    <Position X="22" Y="9.25" Width="1.5" />
+    <Position X="21.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAQAgAAACAAAAAAAAAAAAAEAABAAAAAAA=</HashCode>
       <FileName>Model\Categoria.cs</FileName>
