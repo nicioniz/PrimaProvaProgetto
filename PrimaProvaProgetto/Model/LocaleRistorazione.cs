@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PrimaProvaProgetto.Model
 {
-    public class Ristorante
+    public class LocaleRistorazione
     {
   
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;
         private List<Allergene> _allergeni;
         private List<Tavolo> _tavoli;
-        private static Ristorante _instance = null;
+        private static LocaleRistorazione _instance = null;
 
         public List<Pietanza> Menu
         {
@@ -73,7 +73,7 @@ namespace PrimaProvaProgetto.Model
 
         public event NotifyCollectionChangedEventHandler ListaPrenotazioniChanged;
 
-        private Ristorante()
+        private LocaleRistorazione()
         {
             Menu = MenuPersisterFactory.GetMenuLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
@@ -101,10 +101,10 @@ namespace PrimaProvaProgetto.Model
             MenuPersisterFactory.GetMenuSaver("SimpleMenuSaver").Save(Menu);
         }
 
-        public static Ristorante GetInstance()
+        public static LocaleRistorazione GetInstance()
         {
             if (_instance == null)
-                _instance = new Ristorante();
+                _instance = new LocaleRistorazione();
             return _instance;
         }
 

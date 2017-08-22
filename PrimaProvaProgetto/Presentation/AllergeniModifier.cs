@@ -16,7 +16,7 @@ namespace PrimaProvaProgetto.Presentation
         public AllergeniModifier()
         {
             InitializeComponent();
-            foreach (Allergene all in Ristorante.GetInstance().Allergeni)
+            foreach (Allergene all in LocaleRistorazione.GetInstance().Allergeni)
             {
                 CheckBox cb = new CheckBox();
                 cb.Name = "_" + all.Nome + "CheckBox";

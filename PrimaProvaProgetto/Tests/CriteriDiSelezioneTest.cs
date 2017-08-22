@@ -11,7 +11,7 @@ namespace PrimaProvaProgetto.Tests
     {
         public static void Test()
         {
-            Ristorante rist = Ristorante.GetInstance();
+            LocaleRistorazione rist = LocaleRistorazione.GetInstance();
             List<Allergene> allergeniLasagne = new List<Allergene>();
             allergeniLasagne.Add(new Allergene("Latticini"));
             rist.Menu.Add(new Pietanza("Lasagna alla bolognese", 7.5m, Categoria.Primo, allergeniLasagne));

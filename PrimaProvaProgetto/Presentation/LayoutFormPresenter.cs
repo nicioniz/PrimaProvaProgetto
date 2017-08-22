@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PrimaProvaProgetto.Model.Ristorante;
+using static PrimaProvaProgetto.Model.LocaleRistorazione;
 
 namespace PrimaProvaProgetto.Presentation
 {
@@ -74,7 +74,7 @@ namespace PrimaProvaProgetto.Presentation
                MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.Yes)
             {
-                Ristorante ristorante = Ristorante.GetInstance();
+                LocaleRistorazione ristorante = LocaleRistorazione.GetInstance();
                 Dictionary<String, Tavolo> tavoli = new Dictionary<string, Tavolo>();
 
                 IEnumerable<PictureBox> layoutBox = Target.TableLayoutPanel2.Controls.OfType<PictureBox>();

@@ -43,7 +43,7 @@ namespace PrimaProvaProgetto
 
             //Application.Run(new LayoutForm());
 
-            Ristorante.GetInstance().Menu = InitMenu();
+            LocaleRistorazione.GetInstance().Menu = InitMenu();
             SetDefaultLayout();
             FirstWindowForm f = new FirstWindowForm();
             new FirstWindowFormPresenter(f);

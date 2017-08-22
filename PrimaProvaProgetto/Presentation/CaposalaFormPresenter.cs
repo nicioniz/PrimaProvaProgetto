@@ -14,7 +14,7 @@ namespace PrimaProvaProgetto.Presentation
     class CaposalaFormPresenter
     {
         private CaposalaForm _target;
-        private Ristorante _ristorante;
+        private LocaleRistorazione _ristorante;
         /*
          * NOTE:
          * Ci sono alcune ripetizioni di codice, al momento non sono riuscito a trovare una soluzione migliore
@@ -34,7 +34,7 @@ namespace PrimaProvaProgetto.Presentation
         public CaposalaFormPresenter(CaposalaForm target)
         {
             _target = target;
-            _ristorante = Ristorante.GetInstance();
+            _ristorante = LocaleRistorazione.GetInstance();
             _ristorante.ListaPrenotazioni.CollectionChanged += RefreshPrenotazioni;
 
             foreach (Tavolo t in _ristorante.Tavoli)
@@ -134,7 +134,7 @@ namespace PrimaProvaProgetto.Presentation
             ToolStripMenuItem t = (ToolStripMenuItem)sender;
             ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
             Prenotazione p = (Prenotazione)lvi.Tag;
-            ObservableCollection<Prenotazione> lista = Ristorante.GetInstance().ListaPrenotazioni;
+            ObservableCollection<Prenotazione> lista = LocaleRistorazione.GetInstance().ListaPrenotazioni;
 
 
             int index = lvi.ListView.Items.IndexOf(lvi);
@@ -152,7 +152,7 @@ namespace PrimaProvaProgetto.Presentation
             ToolStripMenuItem t = (ToolStripMenuItem)sender;
             ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
             Prenotazione p = (Prenotazione)lvi.Tag;
-            Ristorante.GetInstance().ListaPrenotazioni.Remove(p);
+            LocaleRistorazione.GetInstance().ListaPrenotazioni.Remove(p);
             MessageBox.Show("Cancellazione Effettuata", "Elimina");
         }
 
@@ -161,7 +161,7 @@ namespace PrimaProvaProgetto.Presentation
         {
             ToolStripMenuItem t = (ToolStripMenuItem)sender;
             ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
-            Ristorante r = Ristorante.GetInstance();
+            LocaleRistorazione r = LocaleRistorazione.GetInstance();
             Tavolo tav = (Tavolo)lvi.Tag;
 
             int index = lvi.ListView.Items.IndexOf(lvi);
@@ -189,7 +189,7 @@ namespace PrimaProvaProgetto.Presentation
         private Prenotazione getPrenotazione()
         {
             //return (Ristorante.GetInstance().ListaPrenotazioni.Count != 0) ? Ristorante.GetInstance().ListaPrenotazioni.First() : null;
-            if (Ristorante.GetInstance().ListaPrenotazioni.Count == 0)
+            if (LocaleRistorazione.GetInstance().ListaPrenotazioni.Count == 0)
             {
                 MessageBox.Show("Nessuna voce nella lista prenotazioni");
                 return null;
@@ -223,7 +223,7 @@ namespace PrimaProvaProgetto.Presentation
         {
             ToolStripMenuItem t = (ToolStripMenuItem)sender;
             ListViewItem lvi = (ListViewItem)t.GetCurrentParent().Tag;
-            Ristorante r = Ristorante.GetInstance();
+            LocaleRistorazione r = LocaleRistorazione.GetInstance();
             Tavolo tav = (Tavolo)lvi.Tag;
 
             tav.CalcolaTempo.LiberaTavolo();

@@ -25,8 +25,8 @@ namespace PrimaProvaProgetto.Presentation
         private void Application_Idle(object sender, EventArgs e)
         {
             Target.AvvioTotemClientiButton.Enabled =
-                Ristorante.GetInstance().Menu.Where(p => p.Disponibile).Count() != 0 &&
-                Ristorante.GetInstance().Tavoli.Count != 0;
+                LocaleRistorazione.GetInstance().Menu.Where(p => p.Disponibile).Count() != 0 &&
+                LocaleRistorazione.GetInstance().Tavoli.Count != 0;
         }
 
         private void AvvioTotemClientiButton_Click(object sender, EventArgs e)

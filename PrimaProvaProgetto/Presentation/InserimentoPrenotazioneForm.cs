@@ -19,7 +19,7 @@ namespace PrimaProvaProgetto.Presentation
 
             // Setto il componente per i coperti
             _numericUpDownNumeroPosti.Minimum = 1;
-            List<Tavolo> tavoli = Ristorante.GetInstance().Tavoli;
+            List<Tavolo> tavoli = LocaleRistorazione.GetInstance().Tavoli;
             int maxPosti = 2;
             foreach (Tavolo t in tavoli)
             {
@@ -43,7 +43,7 @@ namespace PrimaProvaProgetto.Presentation
                     MessageBoxDefaultButton.Button1);
             else
             {
-                Ristorante.GetInstance().ListaPrenotazioni.Add(
+                LocaleRistorazione.GetInstance().ListaPrenotazioni.Add(
                     new Prenotazione(_textBoxNome.Text, _textBoxNumeroTel.Text, (int)_numericUpDownNumeroPosti.Value));
                 MessageBox.Show(
                     "Prenotazione inserita con successo",

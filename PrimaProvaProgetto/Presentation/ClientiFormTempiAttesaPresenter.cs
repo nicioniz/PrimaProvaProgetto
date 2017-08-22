@@ -19,7 +19,7 @@ namespace PrimaProvaProgetto.Presentation
         {
             _target = target;
 
-            Ristorante.GetInstance().ListaPrenotazioniChanged += RefreshListaPrenotazioni;
+            LocaleRistorazione.GetInstance().ListaPrenotazioniChanged += RefreshListaPrenotazioni;
             Target.AggiungiPrenotazioneButton.Click += AggiungiPrenotazioneButton_Click;
 
             System.Timers.Timer timer = new System.Timers.Timer(1000);
@@ -68,13 +68,13 @@ namespace PrimaProvaProgetto.Presentation
         private TimeSpan GetTempoAttesaMinimo(int nroPersone)
         {
             List<TimeSpan> tempi = new List<TimeSpan>();
-            Ristorante.GetInstance().Tavoli.Where(t => t.PostiMax >= nroPersone && t.PostiMax <= (nroPersone + 1)).ToList()
+            LocaleRistorazione.GetInstance().Tavoli.Where(t => t.PostiMax >= nroPersone && t.PostiMax <= (nroPersone + 1)).ToList()
                 .ForEach(t => tempi.Add(t.CalcolaTempo.TempoRimanente));
             tempi.Sort();
             if (tempi.Count == 0 || localeVuoto())
                 return TimeSpan.Zero;
             int index = 0;
-            Ristorante.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
+            LocaleRistorazione.GetInstance().ListaPrenotazioni.Where(p => p.NumeroCoperti >= nroPersone && p.NumeroCoperti <= (nroPersone + 1)).ToList()
                 .ForEach(p => tempi[index % tempi.Count] = tempi[index++ % tempi.Count] + Previsione.GetInstance().OttieniPrevisione(nroPersone));
             return tempi.Count != 0 ? tempi.Min() : TimeSpan.Zero;
         }
@@ -101,7 +101,7 @@ namespace PrimaProvaProgetto.Presentation
 
         private bool localeVuoto()
         {
-            return (Ristorante.GetInstance().ListaPrenotazioni.Count == 0) && (Ristorante.GetInstance().Tavoli.Where(t => t.Stato.Equals(StatoTavolo.Occupato)).Count() == 0);
+            return (LocaleRistorazione.GetInstance().ListaPrenotazioni.Count == 0) && (LocaleRistorazione.GetInstance().Tavoli.Where(t => t.Stato.Equals(StatoTavolo.Occupato)).Count() == 0);
         }
 
     }

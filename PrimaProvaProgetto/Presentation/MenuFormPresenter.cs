@@ -35,7 +35,7 @@ namespace PrimaProvaProgetto.Presentation
         private void DrawPietanze()
         {
             Target.TableLayoutPanel.Controls.Clear();
-            foreach (Pietanza p in Ristorante.GetInstance().Menu)
+            foreach (Pietanza p in LocaleRistorazione.GetInstance().Menu)
                 InsertPietanza(p);
         }
 
@@ -46,14 +46,14 @@ namespace PrimaProvaProgetto.Presentation
             if(_modifierForm.ShowDialog() == DialogResult.OK)
             {
                 InsertPietanza(newPietanza);
-                Ristorante.GetInstance().Menu.Add(newPietanza);
+                LocaleRistorazione.GetInstance().Menu.Add(newPietanza);
             }
 
         }
 
         private void buttonIndietro_Click(object sender, EventArgs e)
         {
-            if(Ristorante.GetInstance().Menu.Where(p => p.Disponibile == true).ToList().Count == 0)
+            if(LocaleRistorazione.GetInstance().Menu.Where(p => p.Disponibile == true).ToList().Count == 0)
             {
                 MessageBox.Show(
                 "Il menu non contiene pietanze disponibili, non sarà possibile avviare il totem clienti",
@@ -98,7 +98,7 @@ namespace PrimaProvaProgetto.Presentation
                 MessageBoxIcon.Warning,
                 MessageBoxDefaultButton.Button2);
             if (dr == DialogResult.Yes)
-                Ristorante.GetInstance().Menu.Remove(toDelete);
+                LocaleRistorazione.GetInstance().Menu.Remove(toDelete);
             DrawPietanze();
         }
     }
