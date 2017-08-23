@@ -44,6 +44,7 @@
             this.eliminaPrenotazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._insertPrenotazioneMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.inserisciNuovaPrenotazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFineSerata = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this._prenotazioniPanel.SuspendLayout();
             this._tavoliPanel.SuspendLayout();
@@ -64,13 +65,15 @@
             this.tableLayoutPanel1.Controls.Add(this._tavoliPanel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this._prenotazioniListView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this._tavoliListView, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnFineSerata, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 971);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -132,7 +135,7 @@
             this._prenotazioniListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._prenotazioniListView.Name = "_prenotazioniListView";
             this._prenotazioniListView.ShowItemToolTips = true;
-            this._prenotazioniListView.Size = new System.Drawing.Size(667, 820);
+            this._prenotazioniListView.Size = new System.Drawing.Size(667, 738);
             this._prenotazioniListView.TabIndex = 2;
             this._prenotazioniListView.UseCompatibleStateImageBehavior = false;
             this._prenotazioniListView.View = System.Windows.Forms.View.List;
@@ -144,7 +147,7 @@
             this._tavoliListView.Location = new System.Drawing.Point(683, 144);
             this._tavoliListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._tavoliListView.Name = "_tavoliListView";
-            this._tavoliListView.Size = new System.Drawing.Size(667, 820);
+            this._tavoliListView.Size = new System.Drawing.Size(667, 738);
             this._tavoliListView.TabIndex = 3;
             this._tavoliListView.UseCompatibleStateImageBehavior = false;
             this._tavoliListView.View = System.Windows.Forms.View.List;
@@ -206,6 +209,16 @@
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
             this.inserisciNuovaPrenotazioneToolStripMenuItem.Text = "Inserisci Nuova Prenotazione";
             // 
+            // btnFineSerata
+            // 
+            this.btnFineSerata.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnFineSerata.Location = new System.Drawing.Point(900, 904);
+            this.btnFineSerata.Name = "btnFineSerata";
+            this.btnFineSerata.Size = new System.Drawing.Size(233, 50);
+            this.btnFineSerata.TabIndex = 4;
+            this.btnFineSerata.Text = "&Fine serata";
+            this.btnFineSerata.UseVisualStyleBackColor = true;
+            // 
             // CaposalaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminaPrenotazioneToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip _insertPrenotazioneMenu;
         private System.Windows.Forms.ToolStripMenuItem inserisciNuovaPrenotazioneToolStripMenuItem;
+        private System.Windows.Forms.Button btnFineSerata;
     }
 }

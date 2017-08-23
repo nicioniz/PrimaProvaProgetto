@@ -84,5 +84,10 @@ namespace PrimaProvaProgetto.Presentation
         {
             get { return _insertPrenotazioneMenu; }
         }
+
+        public Button FineSerataButton
+        {
+            get { return btnFineSerata; }
+        }
     }
 }

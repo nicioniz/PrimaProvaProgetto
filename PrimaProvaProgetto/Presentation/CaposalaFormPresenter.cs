@@ -1,4 +1,4 @@
-﻿using PrimaProvaProgetto.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,14 @@ using System.Timers;
 using System.Collections.Specialized;
 using System.Windows.Forms;
 using System.Collections.ObjectModel;
+using PrimaProvaProgetto.Model;
 
 namespace PrimaProvaProgetto.Presentation
 {
     class CaposalaFormPresenter
     {
         private CaposalaForm _target;
-        private LocaleRistorazione _ristorante;
+        private LocaleRistorazione _localeRistorazione;
         /*
          * NOTE:
          * Ci sono alcune ripetizioni di codice, al momento non sono riuscito a trovare una soluzione migliore
@@ -34,10 +35,10 @@ namespace PrimaProvaProgetto.Presentation
         public CaposalaFormPresenter(CaposalaForm target)
         {
             _target = target;
-            _ristorante = LocaleRistorazione.GetInstance();
-            _ristorante.ListaPrenotazioni.CollectionChanged += RefreshPrenotazioni;
+            _localeRistorazione = LocaleRistorazione.GetInstance();
+            _localeRistorazione.ListaPrenotazioni.CollectionChanged += RefreshPrenotazioni;
 
-            foreach (Tavolo t in _ristorante.Tavoli)
+            foreach (Tavolo t in _localeRistorazione.Tavoli)
             {
                 t.StatoChanged += RefreshTavoli;
             }
@@ -59,6 +60,32 @@ namespace PrimaProvaProgetto.Presentation
             _target.EliminaPrenotazioneToolStripMenuItem.Click += eliminaPrenotazioneToolStripMenuItem_Click;
             _target.InserisciNuovaPrenotazioneToolStripMenuItem.Click += inserisciNuovaPrenotazioneToolStripMenuItem_Click;
 
+            _target.FineSerataButton.Click += FineSerataButton_Click;
+
+        }
+
+        private void FineSerataButton_Click(object sender, EventArgs e)
+        {
+            if (_localeRistorazione.Tavoli.FindAll(t => t.Stato == StatoTavolo.Occupato).Count > 0)
+            {
+                DialogResult dr = MessageBox.Show(
+                    "Impossibile terminare la serata, ci sono ancora " + _localeRistorazione.Tavoli.FindAll(t => t.Stato == StatoTavolo.Occupato).Count + " tavoli occupati. Liberare i tavoli e riprovare.",
+                    "Fine serata",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show(
+                    "Sei sicuro di voler terminare la serata?",
+                    "Fine serata",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button2);
+                    if (dr == DialogResult.Yes)
+                        Application.Exit();
+            }
         }
 
         private void RefreshTavoli(object sender, EventArgs e)
@@ -73,9 +100,9 @@ namespace PrimaProvaProgetto.Presentation
                 }
             }
 
-            foreach (Tavolo t in _ristorante.Tavoli)
+            foreach (Tavolo t in _localeRistorazione.Tavoli)
             {
-                t.Numero = _ristorante.Tavoli.IndexOf(t) + 1;
+                t.Numero = _localeRistorazione.Tavoli.IndexOf(t) + 1;
                 ListViewItem lv = new ListViewItem();
                 lv.ForeColor = (t.Stato.Equals(StatoTavolo.Occupato)) ? System.Drawing.Color.Red : System.Drawing.Color.Green;
                 lv.Tag = t;
@@ -93,7 +120,7 @@ namespace PrimaProvaProgetto.Presentation
                 foreach (ListViewItem i in lista)
                     lista.Remove(i);
             }
-            foreach (Prenotazione p in _ristorante.ListaPrenotazioni)
+            foreach (Prenotazione p in _localeRistorazione.ListaPrenotazioni)
             {
                 ListViewItem lv = new ListViewItem();
                 lv.Tag = p;

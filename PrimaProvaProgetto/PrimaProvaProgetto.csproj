@@ -60,13 +60,13 @@
     <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
+    <Compile Include="Model\LocaleRistorazione.cs" />
     <Compile Include="Persistance\ILayoutPersister.cs" />
     <Compile Include="Persistance\IMenuPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\Previsione.cs" />
-    <Compile Include="Model\LocaleRistorazione.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
     <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
