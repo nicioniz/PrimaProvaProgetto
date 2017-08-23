@@ -131,6 +131,7 @@
             // 
             this._prenotazioniListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._prenotazioniListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._prenotazioniListView.HideSelection = false;
             this._prenotazioniListView.Location = new System.Drawing.Point(6, 144);
             this._prenotazioniListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._prenotazioniListView.Name = "_prenotazioniListView";
