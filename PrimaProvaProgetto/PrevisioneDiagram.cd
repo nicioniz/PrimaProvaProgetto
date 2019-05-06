@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PrimaProvaProgetto.Model.Previsione">
+    <Position X="5" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAAAAAAAAAAAAAAAAADEAAAIAAAAAAAQAEAAg=</HashCode>
+      <FileName>Model\Previsione.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_algoritmo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_tempiPermanenza" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.TempoPermanenza">
+    <Position X="0.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAQAAAAAAAAQAACEAAAAAAAAAAAgEAAAAA=</HashCode>
+      <FileName>Model\TempoPermanenza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.AlgoritmoPrevisioneFactory">
+    <Position X="7" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\AlgoritmoPrevisioneFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_dictionary" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PrimaProvaProgetto.Model.AlgoritmoPrevisioneSemplice" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\AlgoritmoPrevisioneSemplice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PrimaProvaProgetto.Model.IAlgoritmoPrevisione">
+    <Position X="11" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\IAlgoritmoPrevisione.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

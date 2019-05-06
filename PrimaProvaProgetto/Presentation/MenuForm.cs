@@ -26,11 +26,19 @@ namespace PrimaProvaProgetto.Presentation
             }
         }
 
-        public Button Indietro
+        public Button IndietroButton
         {
             get
             {
                 return _indietroButton;
+            }
+        }
+
+        public Button NuovaPietanzaButton
+        {
+            get
+            {
+                return _newPietanzaButton;
             }
         }
     }

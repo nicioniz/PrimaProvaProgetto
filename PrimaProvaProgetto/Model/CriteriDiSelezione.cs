@@ -29,7 +29,7 @@ namespace PrimaProvaProgetto.Model
     {
         public List<Pietanza> GetPietanze()
         {
-            return Ristorante.GetInstance().Menu;
+            return LocaleRistorazione.GetInstance().Menu;
         }
     }
 

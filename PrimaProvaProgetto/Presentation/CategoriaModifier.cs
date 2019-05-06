@@ -11,7 +11,7 @@ using PrimaProvaProgetto.Model;
 
 namespace PrimaProvaProgetto.Presentation
 {
-    public partial class CategoriaModifier : UserControl
+    public partial class CategoriaModifier : UserControl, IModifierControl
     {
         public CategoriaModifier()
         {
@@ -43,5 +43,12 @@ namespace PrimaProvaProgetto.Presentation
                 ((RadioButton)(tableLayoutPanel1.Controls.Find("_" + value.ToString() + "RadioButton", true)[0])).Checked = true;
             }
         }
+
+        public object MyValue
+        {
+            get { return Checked; }
+            set { Checked = (Categoria)value ; }
+        }
+        
     }
 }

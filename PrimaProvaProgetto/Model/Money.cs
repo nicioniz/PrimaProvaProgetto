@@ -46,7 +46,7 @@ namespace PrimaProvaProgetto.Model
                     return false;
             }
             var other = (Money)obj;
-            return Equals(other);
+            return Value == other.Value;
         }
 
         public override int GetHashCode()

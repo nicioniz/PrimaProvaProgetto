@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +16,6 @@ namespace PrimaProvaProgetto.Model
 
         public Prenotazione(string nome, string numeroTelefono, int numeroCoperti)
         {
-            if (string.IsNullOrEmpty(nome))
-                throw new ArgumentNullException("nome is null or empty");
-            if (string.IsNullOrEmpty(numeroTelefono))
-                throw new ArgumentNullException("numeroTelefono is null or empty");
-            if (numeroCoperti <= 0)
-                throw new ArgumentOutOfRangeException("numeroCoperti <= 0");
             Nome = nome;
             NumeroTelefono = numeroTelefono;
             NumeroCoperti = numeroCoperti;
@@ -36,6 +31,8 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("nome is null or empty");
                 _nome = value;
             }
         }
@@ -50,11 +47,13 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException("numeroTelefono is null or empty");
                 _numeroTelefono = value;
             }
         }
 
-        [Editabile(Modifier = typeof(NumericUpDown))]
+        [Editabile(Modifier = typeof(IntModifier))]
         public int NumeroCoperti
         {
             get
@@ -64,6 +63,8 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (value <= 0)
+                    throw new ArgumentOutOfRangeException("numeroCoperti <= 0");
                 _numeroCoperti = value;
             }
         }

@@ -11,12 +11,12 @@ using PrimaProvaProgetto.Model;
 
 namespace PrimaProvaProgetto.Presentation
 {
-    public partial class AllergeniModifier : UserControl
+    public partial class AllergeniModifier : UserControl, IModifierControl
     {
         public AllergeniModifier()
         {
             InitializeComponent();
-            foreach (Allergene all in Ristorante.GetInstance().Allergeni)
+            foreach (Allergene all in LocaleRistorazione.GetInstance().Allergeni)
             {
                 CheckBox cb = new CheckBox();
                 cb.Name = "_" + all.Nome + "CheckBox";
@@ -44,6 +44,18 @@ namespace PrimaProvaProgetto.Presentation
                     .ToList()
                     .Find(c => c.Tag == all).Checked = true);
             }
+        }
+
+        public object MyValue
+        {
+            get { return Value; }
+            set { Value = (List<Allergene>)value; }
+        }
+
+        public List<Allergene> Value
+        {
+            get { return Allergeni; }
+            set { Allergeni = value; }
         }
 
     }

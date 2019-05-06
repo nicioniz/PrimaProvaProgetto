@@ -12,6 +12,7 @@ namespace PrimaProvaProgetto.Tests
     {
         public static void Test()
         {
+            Console.WriteLine("---------- ALGORITMO PREVISIONE FACTORY TEST ----------");
             List<string> lista = AlgoritmoPrevisioneFactory.GetAlgoritmiDisponibili();
             foreach (string a in lista)
                 Console.WriteLine(a);
@@ -29,6 +30,7 @@ namespace PrimaProvaProgetto.Tests
             TimeSpan ts = alg.OttieniPrevisione(tps, 2);
 
             Console.WriteLine(ts.TotalMinutes);
+            Console.WriteLine("--------------------------------");
         }
     }
     

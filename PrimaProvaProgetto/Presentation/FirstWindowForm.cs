@@ -23,5 +23,20 @@ namespace PrimaProvaProgetto.Presentation
             MinimumSize = Size;
             
         }
+
+        public Button LayoutButton
+        {
+            get { return _sceltaLayoutButton; }
+        }
+
+        public Button MenuButton
+        {
+            get { return _sceltaMenuButton; }
+        }
+
+        public Button AvvioTotemClientiButton
+        {
+            get { return _avviaTotemButton; }
+        }
     }
 }

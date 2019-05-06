@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,45 +56,91 @@
     <Compile Include="Model\AllergeniExtensions.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\CriteriDiSelezione.cs" />
-    <Compile Include="Model\EditabileAttrinute.cs" />
+    <Compile Include="Model\CriterioDiSelezioneBuilder.cs" />
+    <Compile Include="Model\EditabileAttribute.cs" />
     <Compile Include="Model\IAlgoritmoPrevisione.cs" />
     <Compile Include="Model\ICriterioDiSelezione.cs" />
+    <Compile Include="Model\LocaleRistorazione.cs" />
+    <Compile Include="Persistance\ILayoutPersister.cs" />
+    <Compile Include="Persistance\IMenuPersister.cs" />
     <Compile Include="Model\Money.cs" />
     <Compile Include="Model\Pietanza.cs" />
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\Previsione.cs" />
-    <Compile Include="Model\Ristorante.cs" />
     <Compile Include="Model\StatoTavolo.cs" />
+    <Compile Include="Model\Tavolo.cs" />
     <Compile Include="Model\TempoPermanenza.cs" />
+    <Compile Include="Persistance\LayoutPersisterFactory.cs" />
+    <Compile Include="Persistance\MenuPersisterFactory.cs" />
+    <Compile Include="Persistance\SimpleJsonLayoutPersister.cs" />
     <Compile Include="Presentation\AllergeniModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\AllergeniModifier.Designer.cs">
       <DependentUpon>AllergeniModifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\CaposalaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CaposalaForm.Designer.cs">
+      <DependentUpon>CaposalaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\CaposalaFormPresenter.cs" />
     <Compile Include="Presentation\CategoriaModifier.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\CategoriaModifier.Designer.cs">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\ClientiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ClientiForm.Designer.cs">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ClientiFormSelezioneMenuPresenter.cs" />
+    <Compile Include="Presentation\ClientiFormTempiAttesaPresenter.cs" />
+    <Compile Include="Presentation\DataGridViewExtensions.cs" />
     <Compile Include="Presentation\FirstWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\FirstWindowForm.Designer.cs">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\FirstWindowFormPresenter.cs" />
+    <Compile Include="Presentation\IModifierControl.cs" />
+    <Compile Include="Presentation\InserimentoPrenotazioneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\InserimentoPrenotazioneForm.Designer.cs">
+      <DependentUpon>InserimentoPrenotazioneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\IntModifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentation\LayoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\LayoutForm.Designer.cs">
+      <DependentUpon>LayoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\LayoutFormPresenter.cs" />
     <Compile Include="Presentation\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Presentation\MenuFormPresenter.cs" />
+    <Compile Include="Presentation\ModifierForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\MoneyModifier.Designer.cs">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <Compile Include="Presentation\ModifierForm.Designer.cs">
+      <DependentUpon>ModifierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ModifierFormPresenter.cs" />
+    <Compile Include="Presentation\MoneyModifier.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Presentation\PietanzaControl.cs">
       <SubType>UserControl</SubType>
@@ -98,6 +148,10 @@
     <Compile Include="Presentation\PietanzaControl.Designer.cs">
       <DependentUpon>PietanzaControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\StringModifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\CalcolaTempo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AlgoritmoPrevisioneFactoryTest.cs" />
@@ -113,17 +167,29 @@
     <EmbeddedResource Include="Presentation\AllergeniModifier.resx">
       <DependentUpon>AllergeniModifier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CaposalaForm.resx">
+      <DependentUpon>CaposalaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CategoriaModifier.resx">
       <DependentUpon>CategoriaModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ClientiForm.resx">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FirstWindowForm.resx">
       <DependentUpon>FirstWindowForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\InserimentoPrenotazioneForm.resx">
+      <DependentUpon>InserimentoPrenotazioneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\LayoutForm.resx">
+      <DependentUpon>LayoutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\MoneyModifier.resx">
-      <DependentUpon>MoneyModifier.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\ModifierForm.resx">
+      <DependentUpon>ModifierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PietanzaControl.resx">
       <DependentUpon>PietanzaControl.cs</DependentUpon>
@@ -136,10 +202,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Tests\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ModifierControlDiagram.cd" />
+    <None Include="PersistenzaDiagram.cd" />
+    <None Include="PresentationDiagram.cd" />
+    <None Include="PrevisioneDiagram.cd" />
+    <None Include="LocaleRistorazioneDiagram.cd" />
+    <None Include="CriteriDiSelezioneDiagram.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,6 +226,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\2 posti oriz.png" />
+    <Content Include="Resources\4 posti.jpg" />
+    <Content Include="Resources\4 posti.png" />
+    <Content Include="Resources\6 posti.png" />
+    <Content Include="Resources\8 posti.png" />
+    <Content Include="Resources\parkiet_dab_gestreift.jpg" />
+    <Content Include="Resources\Wood Floor install.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

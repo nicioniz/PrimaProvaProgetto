@@ -13,10 +13,16 @@ namespace PrimaProvaProgetto.Model
         */
         public TimeSpan OttieniPrevisione(List<TempoPermanenza> vecchiePermanenze, int numeroPersone)
         {
+            if (numeroPersone >= 7)
+                return new TimeSpan(Convert.ToInt64(
+                vecchiePermanenze
+                    .Where(tp => tp.NumeroCoperti >= numeroPersone)
+                    .Average(tp => tp.Tempo.Ticks)));
             return new TimeSpan(Convert.ToInt64(
                 vecchiePermanenze
-                    .Where(tp => tp.NumeroCoperti == numeroPersone)
+                    .Where(tp => tp.NumeroCoperti >= numeroPersone && tp.NumeroCoperti <= (numeroPersone + 1))
                     .Average(tp => tp.Tempo.Ticks)));
+           
         }
 
     }

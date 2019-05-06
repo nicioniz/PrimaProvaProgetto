@@ -14,14 +14,6 @@ namespace PrimaProvaProgetto.Model
 
         public TempoPermanenza(int numeroCoperti, DateTime oraInizio, DateTime oraFine)
         {
-            if (numeroCoperti <= 0)
-                throw new ArgumentException("numeroCopert <= 0");
-            if (oraInizio == null)
-                throw new ArgumentNullException("oraInizio is null");
-            if (oraFine == null)
-                throw new ArgumentNullException("oraFine is null");
-            if (oraFine <= oraInizio)
-                throw new ArgumentException("oraFine <= oraInizio");
             NumeroCoperti = numeroCoperti;
             OraInizio = oraInizio;
             OraFine = oraFine;
@@ -36,6 +28,8 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (value <= 0)
+                    throw new ArgumentException("numeroCopert <= 0");
                 _numeroCoperti = value;
             }
         }
@@ -49,6 +43,10 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (value == null)
+                    throw new ArgumentNullException("oraInizio is null");
+                if (OraFine != default(DateTime) && OraFine <= value)
+                    throw new ArgumentException("oraFine <= oraInizio");
                 _oraInizio = value;
             }
         }
@@ -62,6 +60,10 @@ namespace PrimaProvaProgetto.Model
 
             set
             {
+                if (value == null)
+                    throw new ArgumentNullException("oraFine is null");
+                if (OraInizio != default(DateTime) && value <= OraInizio)
+                    throw new ArgumentException("oraFine <= oraInizio");
                 _oraFine = value;
             }
         }

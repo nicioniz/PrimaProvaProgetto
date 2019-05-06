@@ -1,20 +1,23 @@
-﻿using System;
+﻿using PrimaProvaProgetto.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PrimaProvaProgetto.Model
 {
-    public class Ristorante
+    public class LocaleRistorazione
     {
+  
         private List<Pietanza> _menu;
         private ObservableCollection<Prenotazione> _listaPrenotazioni;
         private List<Allergene> _allergeni;
-
-        private static Ristorante _instance = null;
+        private List<Tavolo> _tavoli;
+        private static LocaleRistorazione _instance = null;
 
         public List<Pietanza> Menu
         {
@@ -26,6 +29,19 @@ namespace PrimaProvaProgetto.Model
             set
             {
                 _menu = value;
+            }
+        }
+
+        public List<Tavolo> Tavoli
+        {
+            get
+            {
+                return _tavoli;
+            }
+
+            set
+            {
+                _tavoli = value;
             }
         }
 
@@ -57,20 +73,38 @@ namespace PrimaProvaProgetto.Model
 
         public event NotifyCollectionChangedEventHandler ListaPrenotazioniChanged;
 
-        private Ristorante()
+        private LocaleRistorazione()
         {
-            Menu = new List<Pietanza>();
+            Menu = MenuPersisterFactory.GetMenuLoader("SimpleMenuLoader").Load();
             ListaPrenotazioni = new ObservableCollection<Prenotazione>();
-            Allergeni = LoadAllergeni();
-            //possiamo mettere il caricamento da file
-            
-            ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
-        }        
 
-        public static Ristorante GetInstance()
+            /* 
+            * Per ora al Ristorante ho lasciato una lista di soli tavoli, non so se possa servire un altro sistema
+            * magari la Form dei camerieri avrà anch'essa bisogno delle coordinate dei tavoli,
+            * ma mettere tali informazioni qui forse mescola dati con grafica
+            */
+            Tavoli = LayoutPersisterFactory.GetLayoutLoader("SimpleJsonLayoutLoader").Load(TipoLayout.Vuoto).Values.ToList();
+            
+            Allergeni = LoadAllergeni();
+
+            ListaPrenotazioni.CollectionChanged += ListaPrenotazioniChanged;
+            Application.ApplicationExit += Application_ApplicationExit;
+        }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            /*
+             * Potrebbe essere meglio spostare anche questo salvataggio?
+             * Forse farlo al momento dell'avvio del totem clienti riduce il rischio di perderlo
+             * (magari va tutto in crash prima della chiusura dell'applicazione)
+             */
+            MenuPersisterFactory.GetMenuSaver("SimpleMenuSaver").Save(Menu);
+        }
+
+        public static LocaleRistorazione GetInstance()
         {
             if (_instance == null)
-                _instance = new Ristorante();
+                _instance = new LocaleRistorazione();
             return _instance;
         }
 
